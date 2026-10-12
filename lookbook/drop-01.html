@@ -1,0 +1,726 @@
+<title>LĂLÂU Drop 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,600;0,800;1,400&family=Bungee&family=IBM+Plex+Mono:wght@400;600&family=Rubik+Bubbles&family=Rubik+Wet+Paint&family=Shrikhand&display=swap">
+<style>
+/* Layout: skate-zine lookbook. Wordmark masthead, product sheets on a concrete ground, the plan as a spec sheet at the end, vote tally pinned to the bottom. */
+:root{
+  --bg:#e4e5e0;
+  --surface:#f1f1ec;
+  --stage:#d3d5cf;
+  --stage-hi:#e6e7e2;
+  --fg:#161716;
+  --muted:#565953;
+  --line:#bdc0b9;
+  --accent:#f2c230;
+  --on-accent:#161716;
+  --red:#c4361c;
+  --ok:#2c7a4c;
+  --edge:rgba(0,0,0,.30);
+  --f-logo:'Shrikhand','Cooper Black',Georgia,serif;
+  --f-display:'Bungee',Impact,'Arial Black',sans-serif;
+  --f-body:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131413; --surface:#1c1d1b; --stage:#282a27; --stage-hi:#3b3d39;
+    --fg:#ebeae4; --muted:#a3a59e; --line:#363833;
+    --accent:#f2c230; --on-accent:#161716; --red:#ee6d4f; --ok:#61c189;
+    --edge:rgba(255,255,255,.22); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131413; --surface:#1c1d1b; --stage:#282a27; --stage-hi:#3b3d39;
+  --fg:#ebeae4; --muted:#a3a59e; --line:#363833;
+  --accent:#f2c230; --on-accent:#161716; --red:#ee6d4f; --ok:#61c189;
+  --edge:rgba(255,255,255,.22); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:0 120px}
+.wrap{max-width:1240px;margin-inline:auto}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* masthead */
+.mast{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:24px 48px;align-items:end;padding-block:40px 28px;border-bottom:3px solid var(--fg)}
+.logo{font-family:var(--f-logo);font-size:clamp(72px,15vw,168px);line-height:.9;letter-spacing:-.01em;color:var(--fg);text-shadow:.045em .05em 0 var(--accent);margin:0 0 6px -4px}
+.mast .kicker{font-family:var(--f-display);font-size:clamp(15px,2.2vw,20px);letter-spacing:.06em}
+.mast .lede{color:var(--muted);max-width:60ch}
+.mast .lede strong{color:var(--fg)}
+.tape{display:inline-block;background:var(--accent);color:var(--on-accent);font-family:var(--f-mono);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;transform:rotate(-1.5deg);margin-bottom:12px}
+.how{display:grid;gap:10px;font-size:15px}
+.how ol{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.how .db-note{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+
+/* grid */
+.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;padding-block:28px 16px}
+.section-head h2{font-family:var(--f-display);font-size:clamp(22px,3vw,30px);letter-spacing:.02em}
+.section-head p{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:28px 22px}
+
+.card{display:flex;flex-direction:column;min-width:0;background:var(--surface);border:1px solid var(--line)}
+.card[data-verdict="da"]{box-shadow:0 0 0 3px var(--ok)}
+.card[data-verdict="nu"] .stage{opacity:.55}
+.stage{position:relative;aspect-ratio:1/1.02;max-width:100%;background:radial-gradient(70% 60% at 50% 42%,var(--stage-hi),var(--stage));display:grid;place-items:center;border-bottom:1px solid var(--line);transition:opacity .2s}
+.art{width:88%;max-width:100%}
+.art > svg{width:100%;height:auto;display:block;overflow:visible}
+.stage .code{position:absolute;top:10px;left:10px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--muted)}
+.stage .verdict-chip{position:absolute;top:8px;right:8px;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1.5px solid currentColor}
+.verdict-chip.da{color:var(--ok)} .verdict-chip.poate{color:var(--fg);background:var(--accent);border-color:var(--accent);color:var(--on-accent)} .verdict-chip.nu{color:var(--red)}
+.info{display:grid;gap:12px;padding:16px 16px 18px}
+.title-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.title-row h3{font-family:var(--f-display);font-size:19px;letter-spacing:.02em;line-height:1.15;min-width:0}
+.price{font-family:var(--f-mono);font-weight:600;font-size:15px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.kind{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.story{font-size:15px}
+.controls{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.swatches{display:flex;flex-wrap:wrap;gap:8px}
+.sw{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);padding:0;position:relative}
+.sw[aria-checked="true"]{border-color:var(--fg);box-shadow:0 0 0 2px var(--surface) inset}
+.sw-name{font-family:var(--f-mono);font-size:12px;color:var(--muted);flex-basis:100%}
+.seg{display:inline-flex;border:1.5px solid var(--fg)}
+.seg button{background:none;border:0;padding:5px 12px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.specs{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 12px;margin:0;font-size:13px;border-top:1px dashed var(--line);padding-top:10px}
+.specs dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.specs dd{margin:0}
+.vote{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.vote button{border:1.5px solid var(--fg);background:transparent;padding:9px 4px;font-size:13px;font-weight:800;letter-spacing:.02em;line-height:1.2}
+.vote button:hover{background:var(--stage)}
+.vote button[aria-pressed="true"][data-v="da"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.vote button[aria-pressed="true"][data-v="poate"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.vote button[aria-pressed="true"][data-v="nu"]{background:var(--red);border-color:var(--red);color:#fff}
+.note-lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.note{width:100%;min-height:56px;resize:vertical;background:var(--bg);color:var(--fg);border:1px solid var(--line);padding:8px 10px;font:14px/1.4 var(--f-body)}
+.save-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.save{background:var(--fg);color:var(--bg);border:0;padding:7px 12px;font-size:13px;font-weight:600}
+.status{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+
+/* plan sheet */
+.plan{margin-top:56px;border-top:3px solid var(--fg);padding-top:8px}
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:0;border:1px solid var(--line);background:var(--surface)}
+.plan-item{padding:16px 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-width:0;display:grid;gap:6px;align-content:start}
+.plan-item h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.plan-item p,.plan-item li{font-size:15px}
+.plan-item ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
+.plan-item .big{font-family:var(--f-display);font-size:20px;letter-spacing:.02em}
+.warn{background:var(--accent);color:var(--on-accent);padding:16px 18px;display:grid;gap:6px;margin-top:20px}
+.warn h3{font-family:var(--f-display);font-size:18px}
+.warn p{max-width:80ch}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-top:20px}
+.steps section{border-top:3px solid var(--fg);padding-top:10px;display:grid;gap:6px;align-content:start}
+.steps h3{font-family:var(--f-display);font-size:16px}
+.steps ul{margin:0;padding-left:1.1em;display:grid;gap:3px;font-size:15px}
+.who{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+footer{margin-top:40px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+
+/* tally bar */
+.tally{position:fixed;left:0;right:0;bottom:0;background:var(--fg);color:var(--bg);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.tally .in{max-width:1240px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 18px}
+.tally .counts{display:flex;gap:14px;font-family:var(--f-mono);font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;flex-wrap:wrap}
+.tally .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:0}
+.tally .msg{font-size:13px}
+
+@media (max-width:760px){
+  .mast{grid-template-columns:minmax(0,1fr);padding-block:28px 22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <span class="tape">Propuneri · încă nu sunt de vânzare</span>
+      <h1 class="logo">lălâu</h1>
+      <p class="kicker">SKATE CO. · BUCUREȘTI · DROP 01</p>
+    </div>
+    <div class="how">
+      <p class="lede"><strong>Haine lălâi pentru oameni liberi.</strong> Tricouri oversized grele, hanorace și fesuri pentru skate. Toată grafica de mai jos e desenată de la zero pentru brand, deci e a ta și o poți vinde legal.</p>
+      <ol>
+        <li>Schimbă culoarea și vezi fața sau spatele fiecărui produs.</li>
+        <li>Votează: <b>Intră în drop</b>, <b>Modifică</b> sau <b>Scoate</b>.</li>
+        <li>Scrie ce să schimb în căsuța de notă.</li>
+        <li>Când ai terminat, scrie-mi în chat „am votat”.</li>
+      </ol>
+      <p class="db-note" id="dbNote">Se conectează la salvarea voturilor…</p>
+    </div>
+  </header>
+
+  <div class="section-head">
+    <h2>Drop 01 · 10 propuneri</h2>
+    <p>Prețuri propuse pentru client · producție la comandă în UE</p>
+  </div>
+  <main class="grid" id="grid"></main>
+
+  <section class="plan" id="plan" aria-labelledby="planTitle">
+    <div class="section-head">
+      <h2 id="planTitle">Planul magazinului</h2>
+      <p>Varianta completă e în repo: docs/PLAN.md</p>
+    </div>
+
+    <div class="plan-grid">
+      <div class="plan-item">
+        <h3>Brand</h3>
+        <p class="big">LĂLÂU Skate Co.</p>
+        <p>„Haine lălâi” e exact ce poartă skaterii: larg, comod, rezistent. Nume românesc, ușor de ținut minte, cu autoironie. Identitate: grafică de bloc, bordură, porumbei și asfalt prost.</p>
+      </div>
+      <div class="plan-item">
+        <h3>Domeniu</h3>
+        <p class="big">lalau.ro</p>
+        <p>Rezervă: lalau.store sau lalauskate.ro. Disponibilitatea se verifică la cumpărare (registrul nu răspunde din mediul meu). Cost: aproximativ 50–70 lei pe an.</p>
+      </div>
+      <div class="plan-item">
+        <h3>Furnizor</h3>
+        <p class="big">Printful (producție UE)</p>
+        <p>Print la comandă, fără stoc: tricouri oversized heavyweight, broderie, etichetă interioară cu logo și API pentru comenzi automate. Testăm în paralel Printoteca (București) pentru livrare mai rapidă în România. Comandăm mostre înainte de lansare.</p>
+      </div>
+      <div class="plan-item">
+        <h3>Site</h3>
+        <ul>
+          <li>Magazin propriu: catalog, pagină de produs, coș, plată cu cardul (Stripe)</li>
+          <li>Comanda plătită merge automat la Printful, care o produce și o livrează</li>
+          <li>Găzduire gratuită pe Cloudflare Pages, fără abonament lunar</li>
+          <li>Facturi e-Factura prin Oblio sau SmartBill</li>
+        </ul>
+      </div>
+      <div class="plan-item">
+        <h3>Prețuri propuse</h3>
+        <ul>
+          <li>Tricou oversized: 159–179 lei</li>
+          <li>Crewneck: 299 lei · Hanorac: 349 lei</li>
+          <li>Fes brodat: 119 lei</li>
+          <li>Livrare ~20 lei, gratuită peste 350 lei</li>
+        </ul>
+        <p>Marja estimată e de 15–35% pe tricou. Costurile exacte le confirmăm din contul Printful, iar dacă ies mai mari urcăm tricoul la 189–199 lei.</p>
+      </div>
+      <div class="plan-item">
+        <h3>Promovare</h3>
+        <ul>
+          <li>TikTok și Instagram: clipuri de skate la Tineretului, Herăstrău, Eroilor</li>
+          <li>Tricouri gratis la 10–15 skateri locali înainte de lansare</li>
+          <li>Pinterest cu designurile noastre, ca să aducă trafic</li>
+          <li>Google Shopping gratuit, concurs de lansare, drop limitat la 14 zile</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warn" role="note">
+      <h3>Despre imaginile de pe Pinterest</h3>
+      <p>Imaginile de pe Pinterest aparțin artiștilor care le-au făcut. Dacă le printăm pe haine și le vindem, încălcăm drepturile de autor: furnizorul poate refuza comenzile, iar autorul poate cere despăgubiri. Folosim Pinterest doar ca inspirație. Trimite-mi pinurile care îți plac și desenez ceva original în același stil, ca designurile de mai sus.</p>
+    </div>
+
+    <div class="steps">
+      <section>
+        <p class="who">Acum</p>
+        <h3>Alegem hainele</h3>
+        <ul><li>Votezi pe pagina asta</li><li>Refac ce e „Modifică”, adaug variante noi</li><li>Repetăm până îți place tot drop-ul</li></ul>
+      </section>
+      <section>
+        <p class="who">Eu</p>
+        <h3>Construiesc magazinul</h3>
+        <ul><li>Fișiere de print la rezoluție mare</li><li>Site complet: produse, coș, plată, pagini legale, ANPC/SOL</li><li>Kit de lansare: postări, texte, calendar</li></ul>
+      </section>
+      <section>
+        <p class="who">Tu</p>
+        <h3>Conturile pe numele tău</h3>
+        <ul><li>PFA sau SRL (obligatoriu ca să vinzi)</li><li>Cont Stripe, cont Printful, domeniul</li><li>Comanzi mostrele și le probezi</li></ul>
+      </section>
+      <section>
+        <p class="who">Împreună</p>
+        <h3>Lansăm</h3>
+        <ul><li>Conectez cheile și fac o comandă de test</li><li>Pornim site-ul pe lalau.ro</li><li>Postezi kitul de lansare pe rețele</li></ul>
+      </section>
+    </div>
+  </section>
+
+  <footer>LĂLÂU Skate Co. · grafică originală, desenată pentru brand · Drop 01, propuneri</footer>
+</div>
+
+<div class="tally" role="status" aria-live="polite">
+  <div class="in">
+    <div class="counts" id="counts"></div>
+    <p class="msg" id="tallyMsg">Votează fiecare produs, apoi scrie-mi „am votat”.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+const F = {
+  logo:"Shrikhand,'Cooper Black',Georgia,serif",
+  bub:"'Rubik Bubbles','Arial Rounded MT Bold','Arial Black',sans-serif",
+  disp:"Bungee,Impact,'Arial Black',sans-serif",
+  wet:"'Rubik Wet Paint',Bungee,Impact,sans-serif",
+  cond:"Anton,Impact,'Arial Narrow',sans-serif",
+  mono:"'IBM Plex Mono',ui-monospace,Menlo,monospace",
+  body:"Archivo,Arial,sans-serif"
+};
+function T(x,y,size,font,fill,text,extra){
+  return '<text x="'+x+'" y="'+y+'" font-size="'+size+'" font-family="'+font+'" fill="'+fill+'" text-anchor="middle" '+(extra||'')+'>'+text+'</text>';
+}
+function fit(w){ return 'textLength="'+w+'" lengthAdjust="spacingAndGlyphs"'; }
+
+/* Colorways: fabric, ink (main print color), accent (second print color) */
+const C = {
+  negru:   {n:'Negru',        fab:'#1a1a1c', ink:'#f1eee6', acc:'#f2c230'},
+  ecru:    {n:'Ecru',         fab:'#e8e0cc', ink:'#1d1c1a', acc:'#c9371d'},
+  alb:     {n:'Alb',          fab:'#f6f5f1', ink:'#18181a', acc:'#2f5fd0'},
+  melanj:  {n:'Gri melanj',   fab:'#a3a4a2', ink:'#141414', acc:'#f2c230'},
+  verde:   {n:'Verde pădure', fab:'#2e3b31', ink:'#efe9dc', acc:'#e9b949'},
+  praf:    {n:'Albastru praf',fab:'#8fa3b4', ink:'#17202a', acc:'#f4efe4'},
+  maro:    {n:'Maro',         fab:'#4b3526', ink:'#efe2c8', acc:'#e8a33a'},
+  carbune: {n:'Cărbune',      fab:'#3a3b3e', ink:'#eeeae2', acc:'#f2c230'},
+  portocaliu:{n:'Portocaliu', fab:'#d4622a', ink:'#1a1a1c', acc:'#f6f5f1'}
+};
+
+/* ---------- Graphics (original artwork). Each returns SVG markup for its own viewBox. ---------- */
+const D = {
+  wordmark:{vb:[300,170], draw:c=>
+    T(156,104,104,F.logo,c.acc,'lălâu',fit(270))+
+    T(150,98,104,F.logo,c.ink,'lălâu',fit(270))+
+    T(150,142,20,F.disp,c.ink,'SKATE CO.','letter-spacing="4"')+
+    T(150,164,11,F.mono,c.ink,'BUCUREȘTI · EST. 2026','letter-spacing="3" font-weight="600"')
+  },
+  wordmarkSmall:{vb:[150,64], draw:c=>
+    T(76,47,50,F.logo,c.acc,'lălâu',fit(132))+
+    T(74,45,50,F.logo,c.ink,'lălâu',fit(132))
+  },
+  puff:{vb:[300,250], draw:c=>
+    T(155,128,92,F.bub,c.acc,'LĂLÂU',fit(276))+
+    T(150,122,92,F.bub,c.ink,'LĂLÂU',fit(276))+
+    T(150,170,24,F.disp,c.ink,'SKATE CO.','letter-spacing="4"')+
+    '<rect x="44" y="184" width="212" height="3" fill="'+c.ink+'"/>'+
+    T(150,208,12,F.mono,c.ink,'BUCUREȘTI · EST. 2026','letter-spacing="3" font-weight="600"')+
+    T(150,234,14,F.body,c.acc,'haine lălâi pentru oameni liberi','font-style="italic"')
+  },
+  puffSmall:{vb:[150,60], draw:c=>
+    T(77,47,44,F.bub,c.acc,'LĂLÂU',fit(136))+
+    T(75,44,44,F.bub,c.ink,'LĂLÂU',fit(136))
+  },
+  bloc:{vb:[300,340], draw:(c,u)=>{
+    let s='<path id="'+u+'arc" d="M34 112 A122 122 0 0 1 266 112" fill="none"/>';
+    s+='<text font-family="'+F.disp+'" font-size="23" fill="'+c.ink+'" letter-spacing="1"><textPath href="#'+u+'arc" startOffset="50%" text-anchor="middle">BLOC 7 · SKATE CLUB</textPath></text>';
+    // rooftop
+    s+='<rect x="148" y="106" width="30" height="14" fill="'+c.ink+'"/>';
+    s+='<path d="M106 120 V96 M98 102 H114 M100 108 H112 M192 120 V104 M186 108 H198" stroke="'+c.ink+'" stroke-width="2.5" fill="none"/>';
+    // block
+    s+='<rect x="85" y="120" width="130" height="180" fill="'+c.ink+'"/>';
+    const lit={'1,2':1,'3,5':1,'0,6':1,'4,1':1,'2,4':1,'3,0':1};
+    for(let j=0;j<8;j++){
+      // closed balconies on the left side
+      s+='<rect x="74" y="'+(130+j*20)+'" width="11" height="13" fill="'+c.ink+'"/>';
+      s+='<rect x="76" y="'+(132+j*20)+'" width="7" height="4" fill="'+c.fab+'"/>';
+      for(let i=0;i<5;i++){
+        const on=lit[i+','+j];
+        s+='<rect x="'+(96+i*23)+'" y="'+(130+j*20)+'" width="14" height="12" fill="'+(on?c.acc:c.fab)+'"/>';
+      }
+    }
+    // AC units and a dish
+    s+='<rect x="209" y="152" width="10" height="7" fill="'+c.fab+'"/><rect x="209" y="212" width="10" height="7" fill="'+c.fab+'"/>';
+    s+='<path d="M208 248 a8 8 0 0 1 10 -10 z" fill="'+c.fab+'"/>';
+    // door
+    s+='<rect x="138" y="282" width="24" height="18" fill="'+c.fab+'"/><rect x="132" y="278" width="36" height="4" fill="'+c.acc+'"/>';
+    // clothesline with a tiny tee
+    s+='<path d="M38 300 V182 M38 190 L74 198" stroke="'+c.ink+'" stroke-width="2.5" fill="none"/>';
+    s+='<path d="M47 192 l4 -1 l2 3 h6 l2 -3 l4 1 l2 5 l-3 1 v10 h-16 v-10 l-3 -1 z" fill="'+c.acc+'"/>';
+    // flying skater pictogram off the roof
+    s+='<g stroke="'+c.acc+'" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">'+
+       '<path d="M250 120 L246 140 M248 126 L234 118 M248 126 L263 121 M246 140 L237 148 L242 156 M246 140 L257 147 L255 156"/>'+
+       '<path d="M230 160 L268 152" stroke-width="5"/>'+
+       '<path d="M214 130 h10 M210 140 h12 M216 150 h8" stroke-width="3"/></g>';
+    s+='<circle cx="252" cy="112" r="7" fill="'+c.acc+'"/>';
+    s+='<circle cx="238" cy="162" r="3" fill="'+c.acc+'"/><circle cx="262" cy="157" r="3" fill="'+c.acc+'"/>';
+    // ground + address
+    s+='<rect x="20" y="300" width="260" height="3" fill="'+c.ink+'"/>';
+    s+=T(150,326,13,F.mono,c.ink,'SC. B · ET. 4 · AP. 13','letter-spacing="3" font-weight="600"');
+    return s;
+  }},
+  blocSmall:{vb:[130,64], draw:c=>{
+    let s='<rect x="4" y="6" width="38" height="54" fill="'+c.ink+'"/>';
+    for(let j=0;j<5;j++)for(let i=0;i<3;i++) s+='<rect x="'+(9+i*11)+'" y="'+(11+j*10)+'" width="7" height="6" fill="'+((i===1&&j===2)?c.acc:c.fab)+'"/>';
+    s+='<text x="50" y="34" font-family="'+F.disp+'" font-size="20" fill="'+c.ink+'">BLOC 7</text>';
+    s+='<text x="51" y="52" font-family="'+F.mono+'" font-size="10.5" font-weight="600" letter-spacing="1.5" fill="'+c.ink+'">SKATE CLUB</text>';
+    return s;
+  }},
+  frane:{vb:[300,300], draw:c=>{
+    let s='<path d="M176 78 C140 66 110 78 76 66 C96 82 106 90 110 100 C84 96 58 102 26 94 C54 110 70 120 80 130 C58 134 38 140 14 152 C46 152 68 156 86 162 C70 172 54 182 38 198 C80 190 120 186 176 182 Z" fill="'+c.acc+'" stroke="'+c.ink+'" stroke-width="3" stroke-linejoin="round"/>';
+    s+='<path d="M170 98 C150 92 132 98 112 94 C124 104 128 110 130 116 C114 116 100 120 84 120 C102 132 110 138 116 146 C104 150 94 156 82 164 C112 164 140 164 170 166 Z" fill="'+c.fab+'" opacity=".9"/>';
+    s+='<circle cx="192" cy="130" r="64" fill="'+c.ink+'"/>';
+    s+='<circle cx="192" cy="130" r="52" fill="none" stroke="'+c.fab+'" stroke-width="2"/>';
+    s+='<circle cx="192" cy="130" r="27" fill="'+c.fab+'"/>';
+    s+='<circle cx="192" cy="130" r="17" fill="'+c.ink+'"/>';
+    s+='<circle cx="192" cy="130" r="6" fill="'+c.fab+'"/>';
+    for(let k=0;k<8;k++){const a=k*Math.PI/4; s+='<circle cx="'+(192+11.5*Math.cos(a)).toFixed(1)+'" cy="'+(130+11.5*Math.sin(a)).toFixed(1)+'" r="2.4" fill="'+c.fab+'"/>';}
+    s+=T(150,258,56,F.wet,c.ink,'FĂRĂ FRÂNE',fit(282));
+    s+=T(150,290,12,F.mono,c.acc,'NICI ACUM. NICI ATUNCI.','letter-spacing="3" font-weight="600"');
+    return s;
+  }},
+  porumbel:{vb:[300,320], draw:c=>{
+    let s=T(150,28,11,F.mono,c.ink,'COLUMBA LIVIA SKATEBOARDUS','letter-spacing="2.5" font-style="italic" font-weight="600"');
+    // tail
+    s+='<path d="M92 180 L36 204 L44 220 L100 198 Z" fill="'+c.ink+'"/>';
+    // body
+    s+='<ellipse cx="148" cy="176" rx="70" ry="46" transform="rotate(-10 148 176)" fill="'+c.ink+'"/>';
+    // neck + iridescent band
+    s+='<path d="M176 152 C186 124 194 104 204 92 L234 102 C232 124 224 142 212 162 Z" fill="'+c.ink+'"/>';
+    s+='<path d="M184 140 C192 120 198 110 207 102 L229 110 C227 124 221 136 213 150 Z" fill="'+c.acc+'"/>';
+    // wing with two bars
+    s+='<path d="M104 166 C134 142 186 150 204 176 C178 192 132 196 98 190 Z" fill="'+c.fab+'" stroke="'+c.ink+'" stroke-width="3"/>';
+    s+='<path d="M134 166 C150 160 170 162 182 172 M120 178 C140 172 162 174 176 184" stroke="'+c.ink+'" stroke-width="5" fill="none" stroke-linecap="round"/>';
+    // head
+    s+='<circle cx="216" cy="88" r="23" fill="'+c.ink+'"/>';
+    s+='<circle cx="224" cy="83" r="6" fill="'+c.acc+'"/><circle cx="225" cy="83" r="2.6" fill="'+c.ink+'"/>';
+    s+='<path d="M237 88 L258 95 L237 100 Z" fill="'+c.acc+'"/>';
+    s+='<ellipse cx="236" cy="88" rx="4" ry="3" fill="'+c.fab+'"/>';
+    // backwards cap
+    s+='<path d="M194 80 C196 54 236 52 240 76 Z" fill="'+c.acc+'" stroke="'+c.ink+'" stroke-width="2.5"/>';
+    s+='<path d="M197 77 L170 83 L174 91 L199 85 Z" fill="'+c.acc+'" stroke="'+c.ink+'" stroke-width="2.5" stroke-linejoin="round"/>';
+    // legs
+    s+='<path d="M138 214 L134 246 M164 214 L168 246 M126 247 h16 M160 247 h16" stroke="'+c.acc+'" stroke-width="5" stroke-linecap="round"/>';
+    // board
+    s+='<path d="M54 240 C60 252 70 254 80 254 H222 C232 254 242 252 248 240" fill="none" stroke="'+c.ink+'" stroke-width="9" stroke-linecap="round"/>';
+    s+='<rect x="86" y="258" width="22" height="5" fill="'+c.ink+'"/><rect x="194" y="258" width="22" height="5" fill="'+c.ink+'"/>';
+    s+='<circle cx="97" cy="270" r="9" fill="'+c.ink+'"/><circle cx="205" cy="270" r="9" fill="'+c.ink+'"/>';
+    s+='<circle cx="97" cy="270" r="3" fill="'+c.fab+'"/><circle cx="205" cy="270" r="3" fill="'+c.fab+'"/>';
+    s+=T(150,308,24,F.disp,c.ink,'PORUMBEL DE ASFALT',fit(272));
+    return s;
+  }},
+  bordura:{vb:[300,260], draw:c=>{
+    let s=T(150,52,44,F.disp,c.ink,'BORDURA',fit(262));
+    s+=T(150,82,19,F.disp,c.acc,'E A NOASTRĂ','letter-spacing="3"');
+    // curb: top face, end face, striped front face
+    const x0=55,y0=192,x1=285,y1=152,h=32;
+    s+='<path d="M30 178 L260 138 L285 152 L55 192 Z" fill="'+c.fab+'" stroke="'+c.ink+'" stroke-width="3" stroke-linejoin="round"/>';
+    s+='<path d="M30 178 L55 192 L55 224 L30 210 Z" fill="'+c.ink+'"/>';
+    const n=8;
+    for(let k=0;k<n;k++){
+      const ax=x0+(x1-x0)*k/n, ay=y0+(y1-y0)*k/n, bx=x0+(x1-x0)*(k+1)/n, by=y0+(y1-y0)*(k+1)/n;
+      s+='<path d="M'+ax+' '+ay+' L'+bx+' '+by+' L'+bx+' '+(by+h)+' L'+ax+' '+(ay+h)+' Z" fill="'+(k%2?c.fab:c.ink)+'"/>';
+    }
+    s+='<path d="M55 192 L285 152 L285 184 L55 224 Z" fill="none" stroke="'+c.ink+'" stroke-width="3" stroke-linejoin="round"/>';
+    // board grinding the edge
+    s+='<g transform="rotate(-9.9 170 150)">'+
+       '<path d="M108 134 C112 141 118 142 124 142 H218 C224 142 230 141 234 134" fill="none" stroke="'+c.ink+'" stroke-width="8" stroke-linecap="round"/>'+
+       '<rect x="134" y="145" width="16" height="5" fill="'+c.ink+'"/><rect x="194" y="145" width="16" height="5" fill="'+c.ink+'"/>'+
+       '</g>';
+    // sparks
+    s+='<g stroke="'+c.acc+'" stroke-width="3" stroke-linecap="round"><path d="M214 146 L240 128 M216 148 L248 142 M212 146 L226 116 M218 150 L244 156"/></g>';
+    s+=T(150,252,14,F.mono,c.ink,'GRIND CLUB · BUCUREȘTI','letter-spacing="4" font-weight="600"');
+    return s;
+  }},
+  cazi:{vb:[300,300], draw:c=>{
+    let s='<text x="16" y="96" font-family="'+F.cond+'" font-size="96" fill="'+c.ink+'" '+fit(178)+'>CAZI.</text>';
+    s+='<g stroke="'+c.ink+'" stroke-width="6" stroke-linecap="round"><path d="M214 30 V86 M230 30 V86 M246 30 V86 M262 30 V86 M206 76 L272 38"/></g>';
+    s+='<text x="16" y="168" font-family="'+F.cond+'" font-size="64" fill="'+c.ink+'" '+fit(268)+'>TE RIDICI.</text>';
+    s+='<text x="16" y="262" font-family="'+F.cond+'" font-size="96" fill="'+c.acc+'" '+fit(244)+'>REPEȚI.</text>';
+    s+='<text x="16" y="292" font-family="'+F.mono+'" font-size="11" font-weight="600" letter-spacing="2" fill="'+c.ink+'">LĂLÂU · MANUAL DE SKATE, PAG. 1</text>';
+    return s;
+  }},
+  interzis:{vb:[300,340], draw:c=>{
+    const red='#d4261b', white='#f6f3ee', blk='#151515';
+    let s='<circle cx="150" cy="150" r="112" fill="'+red+'"/><circle cx="150" cy="150" r="88" fill="'+white+'"/>';
+    s+='<rect x="62" y="138" width="176" height="24" fill="'+red+'" transform="rotate(45 150 150)"/>';
+    // skater grinding down the bar, breaking out of the sign
+    s+='<g stroke="'+blk+'" stroke-linecap="round" stroke-linejoin="round" fill="none">'+
+       '<path d="M118 92 L190 164" stroke-width="7"/>'+
+       '<path d="M150 88 L146 56" stroke-width="12"/>'+
+       '<path d="M147 64 L116 74 M147 64 L182 48" stroke-width="8"/>'+
+       '<path d="M150 88 L133 98 L136 110 M150 88 L168 112 L164 134" stroke-width="10"/></g>';
+    s+='<circle cx="144" cy="38" r="12" fill="'+blk+'"/>';
+    s+=T(150,300,30,F.disp,c.ink,'INTERZIS CU PLACA',fit(276));
+    s+=T(150,328,15,F.mono,c.acc,'(cică)','font-weight="600" letter-spacing="2"');
+    return s;
+  }},
+  interzisSmall:{vb:[80,80], draw:()=>{
+    const red='#d4261b', white='#f6f3ee', blk='#151515';
+    return '<circle cx="40" cy="40" r="36" fill="'+red+'"/><circle cx="40" cy="40" r="28" fill="'+white+'"/>'+
+      '<rect x="12" y="36" width="56" height="8" fill="'+red+'" transform="rotate(45 40 40)"/>'+
+      '<g stroke="'+blk+'" stroke-linecap="round" fill="none"><path d="M29 25 L52 48" stroke-width="2.5"/><path d="M39 24 L38 14 M38 17 L29 20 M38 17 L48 12 M39 24 L34 27 L35 31 M39 24 L45 31 L44 38" stroke-width="3.2"/></g>'+
+      '<circle cx="37" cy="9" r="4" fill="'+blk+'"/>';
+  }},
+  roata:{vb:[300,320], draw:(c,u)=>{
+    let s='<circle cx="150" cy="140" r="108" fill="'+c.ink+'"/>';
+    s+='<path id="'+u+'ring" d="M150 140 m-86 0 a86 86 0 1 1 172 0 a86 86 0 1 1 -172 0" fill="none"/>';
+    s+='<text font-family="'+F.mono+'" font-size="15" font-weight="600" fill="'+c.fab+'" letter-spacing="2"><textPath href="#'+u+'ring" '+fit(536)+'>LĂLÂU WHEEL CO. ★ 54MM ★ 99A ★ BUCUREȘTI ★ </textPath></text>';
+    s+='<circle cx="150" cy="140" r="66" fill="'+c.fab+'"/><circle cx="150" cy="140" r="62" fill="'+c.acc+'"/>';
+    s+='<circle cx="150" cy="140" r="31" fill="'+c.ink+'"/><circle cx="150" cy="140" r="21" fill="'+c.fab+'"/>';
+    for(let k=0;k<7;k++){const a=k*2*Math.PI/7; s+='<circle cx="'+(150+26*Math.cos(a)).toFixed(1)+'" cy="'+(140+26*Math.sin(a)).toFixed(1)+'" r="3.2" fill="'+c.fab+'"/>';}
+    s+='<circle cx="150" cy="140" r="8" fill="'+c.ink+'"/>';
+    s+=T(150,282,21,F.disp,c.ink,'MERGE ȘI PE ASFALT PROST',fit(282));
+    s+=T(150,306,12,F.mono,c.acc,'testată pe toate gropile din oraș','font-weight="600" letter-spacing="1"');
+    return s;
+  }}
+};
+
+/* ---------- Garments ---------- */
+let uidN=0;
+function place(p, col){
+  const d=D[p.d]; const u='g'+(++uidN)+'-';
+  const [x,y,w,h]=p.box;
+  return '<svg x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" viewBox="0 0 '+d.vb[0]+' '+d.vb[1]+'" preserveAspectRatio="xMidYMid meet" overflow="visible">'+d.draw(col,u)+'</svg>';
+}
+function shadeDefs(u){
+  return '<defs><linearGradient id="'+u+'sh" x1="0" y1="0" x2="0" y2="1">'+
+    '<stop offset="0" stop-color="#fff" stop-opacity=".10"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>'+
+    '<linearGradient id="'+u+'sx" x1="0" y1="0" x2="1" y2="0">'+
+    '<stop offset="0" stop-color="#000" stop-opacity=".14"/><stop offset=".18" stop-color="#000" stop-opacity="0"/><stop offset=".82" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient></defs>';
+}
+const SEAM='rgba(0,0,0,.28)', FOLD='rgba(0,0,0,.055)';
+
+function tee(col, view, prints){
+  const u='t'+(++uidN)+'-';
+  const body='M150 34 L96 50 C70 60 44 76 28 92 L6 196 C28 204 50 208 70 206 L70 418 C150 424 250 424 330 418 L330 206 C350 208 372 204 394 196 L372 92 C356 76 330 60 304 50 L250 34 '+
+    (view==='front' ? 'C232 60 168 60 150 34 Z' : 'C230 44 170 44 150 34 Z');
+  let s='<svg viewBox="0 0 400 440" role="img">'+shadeDefs(u);
+  if(view==='front') s+='<path d="M150 34 C170 24 230 24 250 34 L250 42 L150 42 Z" fill="'+col.fab+'"/><path d="M150 34 C170 24 230 24 250 34 L250 42 L150 42 Z" fill="#000" opacity=".35"/>';
+  s+='<path d="'+body+'" fill="'+col.fab+'" stroke="var(--edge)" stroke-width="1.5"/>';
+  s+='<clipPath id="'+u+'c"><path d="'+body+'"/></clipPath><g clip-path="url(#'+u+'c)">';
+  prints.forEach(p=>{ s+=place(p,col); });
+  s+='<path d="'+body+'" fill="url(#'+u+'sh)"/><path d="M0 0 H400 V440 H0 Z" fill="url(#'+u+'sx)"/>';
+  s+='<path d="M92 250 C102 280 100 310 94 340 M308 250 C298 280 300 310 306 340" stroke="'+FOLD+'" stroke-width="5" fill="none" stroke-linecap="round"/>';
+  s+='</g>';
+  s+='<path d="M102 52 C92 110 80 160 72 206 M298 52 C308 110 320 160 328 206" stroke="'+SEAM+'" stroke-width="1.6" fill="none"/>';
+  s+='<path d="M10 182 C32 190 52 193 72 192 M390 182 C368 190 348 193 328 192 M72 404 C150 410 250 410 328 404" stroke="'+SEAM+'" stroke-width="1.4" stroke-dasharray="4 3" fill="none"/>';
+  s+= view==='front'
+    ? '<path d="M150 34 C168 60 232 60 250 34" stroke="'+col.fab+'" stroke-width="9" fill="none"/><path d="M150 34 C168 60 232 60 250 34" stroke="#000" stroke-opacity=".22" stroke-width="9" fill="none"/>'
+    : '<path d="M150 34 C170 44 230 44 250 34" stroke="#000" stroke-opacity=".22" stroke-width="7" fill="none"/>';
+  return s+'</svg>';
+}
+
+function hoodie(col, view, prints, crew){
+  const u='h'+(++uidN)+'-';
+  const neck = crew
+    ? (view==='front' ? 'C236 70 164 70 146 46 Z' : 'C232 56 168 56 146 46 Z')
+    : 'C238 74 162 74 146 46 Z';
+  const body='M146 46 L98 58 C72 68 54 82 44 98 L14 382 L58 388 L76 206 L74 410 L326 410 L324 206 L342 388 L386 382 L356 98 C346 82 328 68 302 58 L254 46 '+neck;
+  let s='<svg viewBox="0 0 400 460" role="img">'+shadeDefs(u);
+  if(!crew && view==='front'){
+    s+='<path d="M124 62 C114 4 286 4 276 62 Z" fill="'+col.fab+'" stroke="var(--edge)" stroke-width="1.5"/><path d="M124 62 C114 4 286 4 276 62 Z" fill="#000" opacity=".12"/>';
+    s+='<path d="M146 58 C152 20 248 20 254 58 C238 82 162 82 146 58 Z" fill="'+col.fab+'"/><path d="M146 58 C152 20 248 20 254 58 C238 82 162 82 146 58 Z" fill="#000" opacity=".42"/>';
+  }
+  if(crew && view==='front') s+='<path d="M146 46 C168 36 232 36 254 46 L254 52 L146 52 Z" fill="'+col.fab+'"/><path d="M146 46 C168 36 232 36 254 46 L254 52 L146 52 Z" fill="#000" opacity=".35"/>';
+  s+='<path d="'+body+'" fill="'+col.fab+'" stroke="var(--edge)" stroke-width="1.5" stroke-linejoin="round"/>';
+  // cuffs + hem band
+  const bands='M16 366 L60 371 L58 388 L14 382 Z M384 366 L340 371 L342 388 L386 382 Z M74 382 L326 382 L326 410 L74 410 Z';
+  s+='<path d="'+bands+'" fill="'+col.fab+'"/><path d="'+bands+'" fill="#000" opacity=".12"/>';
+  s+='<clipPath id="'+u+'c"><path d="'+body+'"/></clipPath><g clip-path="url(#'+u+'c)">';
+  if(view==='front' && !crew) s+='<path d="M116 286 L284 286 C292 318 300 352 304 380 L96 380 C100 352 108 318 116 286 Z" fill="#000" opacity=".06"/>';
+  prints.forEach(p=>{ s+=place(p,col); });
+  s+='<path d="'+body+'" fill="url(#'+u+'sh)"/><path d="M0 0 H400 V460 H0 Z" fill="url(#'+u+'sx)"/>';
+  s+='<path d="M102 240 C110 270 108 310 102 340 M298 240 C290 270 292 310 298 340" stroke="'+FOLD+'" stroke-width="5" fill="none" stroke-linecap="round"/>';
+  s+='</g>';
+  if(!crew && view==='back'){
+    const hood='M134 52 C122 -4 278 -4 266 52 C258 128 142 128 134 52 Z';
+    s+='<path d="'+hood+'" fill="'+col.fab+'" stroke="var(--edge)" stroke-width="1.5"/><path d="'+hood+'" fill="url(#'+u+'sh)"/><path d="'+hood+'" fill="#000" opacity=".06"/><path d="M200 6 V112" stroke="'+SEAM+'" stroke-width="1.6"/>';
+  }
+  if(view==='front' && !crew){
+    s+='<path d="M116 286 L284 286 C292 318 300 352 304 380 L96 380 C100 352 108 318 116 286 Z" fill="none" stroke="'+SEAM+'" stroke-width="1.6"/>';
+    s+='<path d="M184 72 C182 100 180 130 178 158 M216 72 C218 100 220 130 222 158" stroke="'+col.ink+'" stroke-opacity=".85" stroke-width="3" fill="none" stroke-linecap="round"/>';
+    s+='<rect x="175" y="156" width="6" height="12" rx="2" fill="'+col.ink+'" opacity=".85"/><rect x="219" y="156" width="6" height="12" rx="2" fill="'+col.ink+'" opacity=".85"/>';
+  }
+  if(crew) s+= view==='front'
+    ? '<path d="M146 46 C164 70 236 70 254 46" stroke="#000" stroke-opacity=".22" stroke-width="10" fill="none"/>'
+    : '<path d="M146 46 C168 56 232 56 254 46" stroke="#000" stroke-opacity=".22" stroke-width="8" fill="none"/>';
+  s+='<path d="M104 60 C94 120 84 170 76 206 M296 60 C306 120 316 170 324 206" stroke="'+SEAM+'" stroke-width="1.6" fill="none"/>';
+  s+='<path d="M16 366 L60 371 M384 366 L340 371 M74 382 H326" stroke="'+SEAM+'" stroke-width="1.4" fill="none"/>';
+  return s+'</svg>';
+}
+
+function beanie(col, view, prints){
+  const u='b'+(++uidN)+'-';
+  const dome='M96 250 C84 70 316 70 304 250 Z';
+  let s='<svg viewBox="0 0 400 360" role="img">'+shadeDefs(u);
+  s+='<path d="'+dome+'" fill="'+col.fab+'" stroke="var(--edge)" stroke-width="1.5"/>';
+  s+='<rect x="82" y="222" width="236" height="92" rx="10" fill="'+col.fab+'" stroke="var(--edge)" stroke-width="1.5"/>';
+  s+='<g stroke="#000" stroke-opacity=".13" stroke-width="3">';
+  for(let x=104;x<300;x+=12){ s+='<path d="M'+x+' 228 V308"/>'; }
+  for(let x=118;x<290;x+=14){ const top=110+Math.abs(200-x)*0.6; s+='<path d="M'+x+' '+top.toFixed(0)+' C'+(x+(200-x)*.05).toFixed(0)+' 180 '+x+' 210 '+x+' 220"/>'; }
+  s+='</g>';
+  s+='<path d="'+dome+'" fill="url(#'+u+'sh)"/><rect x="82" y="222" width="236" height="92" rx="10" fill="url(#'+u+'sh)"/>';
+  if(view==='front'){
+    s+='<rect x="150" y="246" width="100" height="46" rx="4" fill="#151515"/>';
+    s+='<rect x="153" y="249" width="94" height="40" rx="3" fill="none" stroke="#f1eee6" stroke-width="1" stroke-dasharray="3 2"/>';
+    prints.forEach(p=>{ s+=place(p,{fab:'#151515',ink:'#f1eee6',acc:'#f2c230'}); });
+  }
+  return s+'</svg>';
+}
+
+/* ---------- Products ---------- */
+const TEE_BLANK='Tricou oversized heavyweight, 100% bumbac, țintă 240–260 g/m², umeri căzuți, croială boxy';
+const HOOD_BLANK='Hanorac oversized heavyweight, țintă 350–400 g/m², interior periat';
+const CREW_BLANK='Bluză crewneck oversized, țintă 350 g/m², manșete și tiv rib';
+const CHEST=[232,92,62,30], BACK=[96,78,208,250], FRONT_BIG=[112,96,176,196], NAPE=[170,52,60,26];
+const H_CHEST=[226,100,64,30], H_BACK=[100,118,200,232], H_NAPE=[166,66,68,28];
+
+const P=[
+  {id:'t01', code:'T01', g:'tee', name:'Lălâu Classic', kind:'Tricou · logo față + spate', price:179,
+   story:'Logo-ul brandului în stilul plăcilor din anii 70: mic pe piept, mare pe spate. Piesa de bază a colecției.',
+   cols:['negru','ecru','maro'], front:[{d:'wordmarkSmall',box:CHEST}], back:[{d:'wordmark',box:[96,96,208,130]}],
+   blank:TEE_BLANK, print:'DTG față și spate, 2 culori'},
+  {id:'t02', code:'T02', g:'tee', name:'Bloc 7 Skate Club', kind:'Tricou · ilustrație spate', price:179,
+   story:'Blocul de cartier ca skatepark. Skaterul sare de pe acoperiș, rufele stau la uscat, scara B e mereu deschisă.',
+   cols:['alb','negru','melanj'], front:[{d:'blocSmall',box:[228,90,72,36]}], back:[{d:'bloc',box:BACK}],
+   blank:TEE_BLANK, print:'DTG față și spate, 2 culori'},
+  {id:'t03', code:'T03', g:'tee', name:'Fără Frâne', kind:'Tricou · print mare față', price:179,
+   story:'Roată în flăcări și litere care curg. Pentru cine coboară dealul fără să se uite înapoi.',
+   cols:['negru','alb','carbune'], front:[{d:'frane',box:FRONT_BIG}], back:[{d:'wordmarkSmall',box:NAPE}],
+   blank:TEE_BLANK, print:'DTG față, logo mic sub guler pe spate'},
+  {id:'t04', code:'T04', g:'tee', name:'Porumbel de Asfalt', kind:'Tricou · ilustrație spate', price:179,
+   story:'Cel mai vechi skater din oraș. Șapcă întoarsă, placă proprie, nicio frică de trafic.',
+   cols:['ecru','praf','negru'], front:[{d:'wordmarkSmall',box:CHEST}], back:[{d:'porumbel',box:BACK}],
+   blank:TEE_BLANK, print:'DTG față și spate, 2 culori'},
+  {id:'t05', code:'T05', g:'tee', name:'Bordura e a Noastră', kind:'Tricou · print mare față', price:179,
+   story:'Bordura vopsită alb-negru, primul obstacol al oricărui skater român. Placa face grind, scântei incluse.',
+   cols:['melanj','negru','alb'], front:[{d:'bordura',box:[110,100,180,160]}], back:[{d:'wordmarkSmall',box:NAPE}],
+   blank:TEE_BLANK, print:'DTG față, logo mic sub guler pe spate'},
+  {id:'t06', code:'T06', g:'tee', name:'Cazi. Te Ridici.', kind:'Tricou · tipografic', price:159,
+   story:'Fără desen, doar regula de bază a skate-ului. Varianta discretă a drop-ului, mai ieftină.',
+   cols:['alb','negru','verde'], front:[{d:'cazi',box:[112,96,176,176]}], back:[],
+   blank:TEE_BLANK, print:'DTG față, 2 culori'},
+  {id:'h01', code:'H01', g:'hoodie', name:'Hanorac Lălâu', kind:'Hanorac · broderie + print spate', price:349,
+   story:'Logo brodat pe piept, logo mare pe spate. Greu, larg, făcut pentru toamnă la skatepark.',
+   cols:['negru','melanj','verde'], front:[{d:'wordmarkSmall',box:H_CHEST}], back:[{d:'wordmark',box:[100,140,200,128]}],
+   blank:HOOD_BLANK, print:'Broderie piept, DTG spate'},
+  {id:'h02', code:'H02', g:'hoodie', name:'Interzis cu Placa', kind:'Hanorac · print spate', price:349,
+   story:'Semnul de interzis, doar că skaterul face grind pe bară și iese din cerc. Pentru toți paznicii de parcare.',
+   cols:['melanj','negru','carbune'], front:[{d:'interzisSmall',box:[236,96,40,40]}], back:[{d:'interzis',box:H_BACK}],
+   blank:HOOD_BLANK, print:'DTG față și spate, culorile semnului fixe'},
+  {id:'c01', code:'C01', g:'crew', name:'Roata 54mm', kind:'Crewneck · print mare față', price:299,
+   story:'Roată de skate cu specificațiile pe ea: 54 mm, duritate 99A, testată pe gropile din oraș.',
+   cols:['ecru','carbune','verde'], front:[{d:'roata',box:[112,92,176,194]}], back:[{d:'wordmarkSmall',box:H_NAPE}],
+   blank:CREW_BLANK, print:'DTG față, logo mic pe spate'},
+  {id:'a01', code:'A01', g:'beanie', name:'Fes Lălâu', kind:'Fes · etichetă brodată', price:119,
+   story:'Fes cu manșetă întoarsă și etichetă neagră brodată. Merge cu orice din drop.',
+   cols:['negru','maro','portocaliu'], front:[{d:'wordmarkSmall',box:[160,250,80,36]}], back:[],
+   blank:'Fes tricotat acrilic moale, manșetă dublă, mărime unică', print:'Broderie pe etichetă'}
+];
+
+const GARMENT={tee:(c,v,p)=>tee(c,v,p), hoodie:(c,v,p)=>hoodie(c,v,p,false), crew:(c,v,p)=>hoodie(c,v,p,true), beanie:(c,v,p)=>beanie(c,v,p)};
+const VLABEL={da:'Intră în drop', poate:'Modifică', nu:'Scoate'};
+const state={}; // id -> {ci, view}
+const votes={}; // id -> {verdict, note, color}
+
+function stageSVG(p){
+  const st=state[p.id]; const col=C[p.cols[st.ci]];
+  const prints = st.view==='front' ? p.front : p.back;
+  return GARMENT[p.g](col, st.view, prints);
+}
+
+function cardHTML(p){
+  state[p.id]={ci:0, view: p.g==='beanie' ? 'front' : (p.back.length && p.back[0].box!==NAPE && p.back[0].box!==H_NAPE ? 'back':'front')};
+  const sw=p.cols.map((k,i)=>'<button class="sw" role="radio" aria-checked="'+(i===0)+'" aria-label="'+C[k].n+'" data-i="'+i+'" style="background:'+C[k].fab+'"></button>').join('');
+  const hasBack = p.g!=='beanie';
+  return '<article class="card" id="p-'+p.id+'" data-id="'+p.id+'">'+
+    '<div class="stage"><span class="code">'+p.code+'</span><span class="verdict-chip" hidden></span><div class="art"></div></div>'+
+    '<div class="info">'+
+      '<div class="title-row"><h3>'+p.name+'</h3><span class="price">'+p.price+' lei</span></div>'+
+      '<p class="kind">'+p.kind+'</p>'+
+      '<p class="story">'+p.story+'</p>'+
+      '<div class="controls"><div class="swatches" role="radiogroup" aria-label="Culoare">'+sw+'<span class="sw-name">'+C[p.cols[0]].n+'</span></div>'+
+      (hasBack?'<div class="seg" role="group" aria-label="Vedere"><button data-view="front">Față</button><button data-view="back">Spate</button></div>':'')+'</div>'+
+      '<dl class="specs"><dt>Blank</dt><dd>'+p.blank+'</dd><dt>Print</dt><dd>'+p.print+'</dd><dt>Culori</dt><dd>'+p.cols.map(k=>C[k].n).join(', ')+'</dd></dl>'+
+      '<div class="vote" role="group" aria-label="Votul tău pentru '+p.name+'">'+
+        ['da','poate','nu'].map(v=>'<button data-v="'+v+'" aria-pressed="false">'+VLABEL[v]+'</button>').join('')+'</div>'+
+      '<label class="note-lbl" for="note-'+p.id+'">Ce să schimb?</label>'+
+      '<textarea class="note" id="note-'+p.id+'" rows="2" placeholder="ex: logo mai mare, altă culoare, fără text pe spate"></textarea>'+
+      '<div class="save-row"><button class="save" type="button">Salvează nota</button><span class="status" aria-live="polite"></span></div>'+
+    '</div></article>';
+}
+
+function renderStage(p){
+  const card=document.getElementById('p-'+p.id);
+  card.querySelector('.art').innerHTML=stageSVG(p);
+  card.querySelector('.art svg').setAttribute('aria-label', p.name+', '+C[p.cols[state[p.id].ci]].n+', '+(state[p.id].view==='front'?'față':'spate'));
+  card.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.view===state[p.id].view)));
+  card.querySelectorAll('.sw').forEach(b=>b.setAttribute('aria-checked', String(+b.dataset.i===state[p.id].ci)));
+  card.querySelector('.sw-name').textContent=C[p.cols[state[p.id].ci]].n;
+}
+
+function renderVote(p){
+  const card=document.getElementById('p-'+p.id); const v=votes[p.id]||{};
+  card.dataset.verdict=v.verdict||'';
+  card.querySelectorAll('.vote button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.v===v.verdict)));
+  const chip=card.querySelector('.verdict-chip');
+  if(v.verdict){ chip.hidden=false; chip.className='verdict-chip '+v.verdict; chip.textContent=VLABEL[v.verdict]; } else chip.hidden=true;
+  const ta=card.querySelector('.note');
+  if(document.activeElement!==ta && typeof v.note==='string') ta.value=v.note;
+}
+
+function renderTally(){
+  let da=0,poate=0,nu=0;
+  P.forEach(p=>{const v=(votes[p.id]||{}).verdict; if(v==='da')da++; else if(v==='poate')poate++; else if(v==='nu')nu++;});
+  const left=P.length-da-poate-nu;
+  document.getElementById('counts').innerHTML=
+    '<span><i class="dot" style="background:var(--ok)"></i>Intră '+da+'</span>'+
+    '<span><i class="dot" style="background:var(--accent)"></i>Modifică '+poate+'</span>'+
+    '<span><i class="dot" style="background:var(--red)"></i>Scoate '+nu+'</span>'+
+    '<span>Fără vot '+left+'</span>';
+  document.getElementById('tallyMsg').textContent = left===0
+    ? 'Gata. Scrie-mi „am votat” în chat și refac drop-ul după alegerile tale.'
+    : 'Votează fiecare produs, apoi scrie-mi „am votat” în chat.';
+}
+
+const grid=document.getElementById('grid');
+grid.innerHTML=P.map(cardHTML).join('');
+P.forEach(p=>{renderStage(p); renderVote(p);});
+renderTally();
+
+/* ---------- Saving votes ---------- */
+let db=null, canWrite=true;
+const queue={};
+const LS='lalau-drop01-votes';
+try{ const saved=JSON.parse(localStorage.getItem(LS)||'{}'); Object.assign(votes,saved); P.forEach(renderVote); renderTally(); }catch(e){}
+
+function persistLocal(){ try{ localStorage.setItem(LS, JSON.stringify(votes)); }catch(e){} }
+
+function save(id, statusEl){
+  persistLocal();
+  const v=votes[id]; const p=P.find(x=>x.id===id);
+  const body={verdict:v.verdict||null, note:v.note||'', color:C[p.cols[state[id].ci]].n, product:p.name, at:new Date().toISOString()};
+  if(!db||!canWrite){ if(statusEl) statusEl.textContent='Salvat doar în acest browser'; return; }
+  if(statusEl) statusEl.textContent='Se salvează…';
+  queue[id]=(queue[id]||Promise.resolve()).then(()=>db.doc('votes/'+id).set(body)).then(()=>{
+    if(statusEl) statusEl.textContent='Salvat';
+  }).catch(e=>{
+    if(e&&e.code==='invalid_argument'){ canWrite=false; }
+    if(statusEl) statusEl.textContent='Nu s-a putut salva. Scrie-mi votul în chat.';
+  });
+}
+
+grid.addEventListener('click', e=>{
+  const card=e.target.closest('.card'); if(!card) return;
+  const id=card.dataset.id; const p=P.find(x=>x.id===id);
+  const sw=e.target.closest('.sw'); const vb=e.target.closest('[data-view]'); const vt=e.target.closest('.vote button'); const sv=e.target.closest('.save');
+  if(sw){ state[id].ci=+sw.dataset.i; renderStage(p); return; }
+  if(vb){ state[id].view=vb.dataset.view; renderStage(p); return; }
+  if(vt){
+    const v=votes[id]||(votes[id]={});
+    v.verdict = v.verdict===vt.dataset.v ? null : vt.dataset.v;
+    v.note = card.querySelector('.note').value;
+    renderVote(p); renderTally(); save(id, card.querySelector('.status')); return;
+  }
+  if(sv){
+    const v=votes[id]||(votes[id]={});
+    v.note=card.querySelector('.note').value;
+    save(id, card.querySelector('.status'));
+  }
+});
+
+const dbNote=document.getElementById('dbNote');
+(async()=>{
+  try{
+    db = window.claude && window.claude.use ? await window.claude.use('db') : null;
+    const user = window.claude && window.claude.use ? await window.claude.use('user') : null;
+    if(user && user.can){ try{ const w=await user.can('data.write'); if(w===false) canWrite=false; }catch(e){} }
+  }catch(e){ db=null; }
+  if(!db){ dbNote.textContent='Voturile se păstrează doar în acest browser. Trimite-mi alegerile și în chat.'; return; }
+  dbNote.textContent = canWrite ? 'Voturile se salvează automat și le citesc direct de aici.' : 'Poți vedea voturile, dar nu poți vota de pe acest cont.';
+  db.collection('votes').onSnapshot(snap=>{
+    snap.docs.forEach(d=>{ if(!d.exists) return; const x=d.data(); const cur=votes[d.id]||(votes[d.id]={}); cur.verdict=x.verdict||null; cur.note=typeof x.note==='string'?x.note:''; });
+    P.forEach(renderVote); renderTally(); persistLocal();
+  }, ()=>{ dbNote.textContent='Salvarea voturilor s-a oprit. Trimite-mi alegerile în chat.'; });
+})();
+})();
+</script>
