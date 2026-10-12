@@ -1,0 +1,2576 @@
+[
+ {
+  "id": "B01",
+  "name": "Nepământean",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Piesa-manifest a colecției: litere 3D ondulate deasupra unui vârtej violet, cu eticheta de clasificare „N”.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g01-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B02",
+  "name": "Not From Here",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Pământul se topește în pixeli, iar textul se arcuiește deasupra lui.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m06-dark",
+     "zone": "front_chest_center"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g02-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru spălat",
+    "hex": "#2A2A2E"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B03",
+  "name": "Realitatea e o simulare",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Afiș de ecran CRT cu ochi, geometrie sacră și text mărunt de conspirație.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g03-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B04",
+  "name": "Câmp adânc",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Galaxie spirală din mii de particule aurii și albastre.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m02-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g07-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B05",
+  "name": "Orizontul evenimentelor",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Gaură neagră cu disc de acreție. Nu există cale de întoarcere.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g08-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Cărbune",
+    "hex": "#3A3B40"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B06",
+  "name": "Planeta B",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Peisaj extraterestru cu apă aurie și o planetă cu inele pe cer.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g09-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B07",
+  "name": "Semnal pierdut",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Mira TV spartă în benzi de glitch. Canal 404.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g05-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B08",
+  "name": "Duceți-mă acasă",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "OZN cu rază de tractare. Pentru cine simte că nu e de aici.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m05-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g11-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Bleumarin",
+    "hex": "#1B2140"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B09",
+  "name": "Vizitator",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Cap de extraterestru cromat, cu linii de scanare.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g22-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B10",
+  "name": "404 Realitate",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Realitatea nu a fost găsită. Fereastră de eroare pixelată.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g19-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Gri melanj",
+    "hex": "#A7A8AB"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B11",
+  "name": "Cerul cade peste cartier",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Ploaie de meteoriți peste blocurile din cartier.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m06-dark",
+     "zone": "front_chest_center"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g16-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B12",
+  "name": "Ascultăm cerul",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Radiotelescop care prinde un semnal la 03:17.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g17-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru spălat",
+    "hex": "#2A2A2E"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B13",
+  "name": "Nu suntem singuri",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Varianta discretă: un OZN mic și un mesaj scurt.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m05-light",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g29-light",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B14",
+  "name": "Pământul e doar o escală",
+  "gender": "baieti",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Panou de plecări: Marte întârziat, Saturn la timp, Acasă anulat.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m03-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g34-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B15",
+  "name": "Gaura de vierme",
+  "gender": "baieti",
+  "garment": "longsleeve",
+  "garment_label": "Bluză cu mânecă lungă",
+  "category": "bluze",
+  "price": 199,
+  "description": "Tunel de inele cyan și violet care se pierd în depărtare.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g20-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "m06-dark",
+     "zone": "back_neck"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B16",
+  "name": "Transmisie",
+  "gender": "baieti",
+  "garment": "longsleeve",
+  "garment_label": "Bluză cu mânecă lungă",
+  "category": "bluze",
+  "price": 199,
+  "description": "Ecran de osciloscop cu oră și sursă necunoscută.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g24-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B17",
+  "name": "Geometrie sacră",
+  "gender": "baieti",
+  "garment": "longsleeve",
+  "garment_label": "Bluză cu mânecă lungă",
+  "category": "bluze",
+  "price": 199,
+  "description": "Cubul lui Metatron în linii cromate, cu un ochi în centru.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g06-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B18",
+  "name": "Orizont 2099",
+  "gender": "baieti",
+  "garment": "longsleeve",
+  "garment_label": "Bluză cu mânecă lungă",
+  "category": "bluze",
+  "price": 199,
+  "description": "Grilă retro-futuristă, munți din sârmă și o planetă care răsare.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g30-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Bleumarin",
+    "hex": "#1B2140"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B19",
+  "name": "Hanorac Nepământean",
+  "gender": "baieti",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Piesa-manifest pe hanorac greu, oversized.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m06-dark",
+     "zone": "front_chest_center"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g01-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B20",
+  "name": "Ochiul",
+  "gender": "baieti",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Iris generat din sute de fibre, cu text mic: te văd.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g04-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B21",
+  "name": "Static",
+  "gender": "baieti",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Tot ce vezi e static: ecran CRT plin de zgomot.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m04-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g23-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Cărbune",
+    "hex": "#3A3B40"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B22",
+  "name": "Pierdut în orbită",
+  "gender": "baieti",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Astronaut cu cablul tăiat, deasupra curburii Pământului.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g12-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Bleumarin",
+    "hex": "#1B2140"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B23",
+  "name": "Clasificat N",
+  "gender": "baieti",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Eticheta de clasificare inventată de noi, în format mare.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m03-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g10-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru spălat",
+    "hex": "#2A2A2E"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B24",
+  "name": "Vede tot",
+  "gender": "baieti",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Ochi în triunghi, cu raze și glitch.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m04-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g21-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B25",
+  "name": "Protocol de contact",
+  "gender": "baieti",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Instrucțiuni tehnice pentru primul contact, în 4 pași.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m05-light",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g32-light",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Gri melanj",
+    "hex": "#A7A8AB"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B26",
+  "name": "Globul",
+  "gender": "baieti",
+  "garment": "zip_hoodie",
+  "garment_label": "Hanorac cu fermoar",
+  "category": "hanorace",
+  "price": 379,
+  "description": "Emblema mare: glob din sârmă, stea și orbite.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g33-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B27",
+  "name": "Câmp de stele",
+  "gender": "baieti",
+  "garment": "zip_hoodie",
+  "garment_label": "Hanorac cu fermoar",
+  "category": "hanorace",
+  "price": 399,
+  "description": "Imprimeu complet cu stele sclipitoare pe negru.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p01",
+  "colors": [
+   {
+    "name": "Imprimeu Câmp de stele",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "B28",
+  "name": "Buletin intergalactic",
+  "gender": "baieti",
+  "garment": "zip_hoodie",
+  "garment_label": "Hanorac cu fermoar",
+  "category": "hanorace",
+  "price": 379,
+  "description": "Carte de identitate pentru vizitatori din altă galaxie.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m03-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g18-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Cărbune",
+    "hex": "#3A3B40"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B29",
+  "name": "Harta cerului",
+  "gender": "baieti",
+  "garment": "crewneck",
+  "garment_label": "Bluză crewneck",
+  "category": "bluze",
+  "price": 299,
+  "description": "Cerul deasupra Bucureștiului, cu constelații și coordonate.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g14-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Bleumarin",
+    "hex": "#1B2140"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B30",
+  "name": "Doar cerul e real",
+  "gender": "baieti",
+  "garment": "crewneck",
+  "garment_label": "Bluză crewneck",
+  "category": "bluze",
+  "price": 299,
+  "description": "Nori, raze și un glitch fin.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g31-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B31",
+  "name": "Fazele lunii",
+  "gender": "baieti",
+  "garment": "crewneck",
+  "garment_label": "Bluză crewneck",
+  "category": "bluze",
+  "price": 299,
+  "description": "Luna știe. Faze cu cratere, în coloană.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g15-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Cărbune",
+    "hex": "#3A3B40"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B32",
+  "name": "Galaxie",
+  "gender": "baieti",
+  "garment": "shorts",
+  "garment_label": "Pantaloni scurți",
+  "category": "pantaloni",
+  "price": 199,
+  "description": "Pantaloni scurți cu imprimeu complet de galaxie.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p02",
+  "colors": [
+   {
+    "name": "Imprimeu Galaxie",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "B33",
+  "name": "Glitch",
+  "gender": "baieti",
+  "garment": "shorts",
+  "garment_label": "Pantaloni scurți",
+  "category": "pantaloni",
+  "price": 199,
+  "description": "Benzi RGB deplasate, ca un semnal stricat.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p06",
+  "colors": [
+   {
+    "name": "Imprimeu Glitch",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "B34",
+  "name": "Static",
+  "gender": "baieti",
+  "garment": "shorts",
+  "garment_label": "Pantaloni scurți",
+  "category": "pantaloni",
+  "price": 199,
+  "description": "Zgomot TV cu nuanță albastră.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p10",
+  "colors": [
+   {
+    "name": "Imprimeu Static",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "B35",
+  "name": "Nepământean",
+  "gender": "baieti",
+  "garment": "joggers",
+  "garment_label": "Pantaloni jogger",
+  "category": "pantaloni",
+  "price": 279,
+  "description": "Pantaloni largi cu textul colecției pe piciorul stâng.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m06-dark",
+     "zone": "front_leg_left"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B36",
+  "name": "Grilă",
+  "gender": "baieti",
+  "garment": "joggers",
+  "garment_label": "Pantaloni jogger",
+  "category": "pantaloni",
+  "price": 299,
+  "description": "Imprimeu complet cu grilă cyan pe negru.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p09",
+  "colors": [
+   {
+    "name": "Imprimeu Grilă",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "B37",
+  "name": "Semnal",
+  "gender": "baieti",
+  "garment": "joggers",
+  "garment_label": "Pantaloni jogger",
+  "category": "pantaloni",
+  "price": 279,
+  "description": "Ochiul pixelat pe picior, restul curat.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m04-dark",
+     "zone": "front_leg_left"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Cărbune",
+    "hex": "#3A3B40"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "B38",
+  "name": "Nebuloasă",
+  "gender": "baieti",
+  "garment": "windbreaker",
+  "garment_label": "Geacă windbreaker",
+  "category": "geci",
+  "price": 399,
+  "description": "Geacă ușoară cu nebuloasă violet și albastră.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p08",
+  "colors": [
+   {
+    "name": "Imprimeu Nebuloasă",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "B39",
+  "name": "Scanline",
+  "gender": "baieti",
+  "garment": "windbreaker",
+  "garment_label": "Geacă windbreaker",
+  "category": "geci",
+  "price": 399,
+  "description": "Benzi cyan-indigo cu linii de scanare.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p03",
+  "colors": [
+   {
+    "name": "Imprimeu Scanline",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "B40",
+  "name": "Câmp adânc",
+  "gender": "baieti",
+  "garment": "tank",
+  "garment_label": "Maiou",
+  "category": "tricouri",
+  "price": 139,
+  "description": "Maiou cu galaxia spirală pe piept.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g07-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F01",
+  "name": "Fată de pe altă planetă",
+  "gender": "fete",
+  "garment": "tee_baby_crop",
+  "garment_label": "Baby tee",
+  "category": "tricouri",
+  "price": 149,
+  "description": "Litere cu cratere de lună, o planetă mică și sclipiri.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g25-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F02",
+  "name": "Cosmic baby",
+  "gender": "fete",
+  "garment": "tee_baby_crop",
+  "garment_label": "Baby tee",
+  "category": "tricouri",
+  "price": 149,
+  "description": "Text cromat Y2K cu stele.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g28-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Roz prăfuit",
+    "hex": "#E6C4CF"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F03",
+  "name": "Înger sau extraterestră",
+  "gender": "fete",
+  "garment": "tee_baby_crop",
+  "garment_label": "Baby tee",
+  "category": "tricouri",
+  "price": 149,
+  "description": "Inimă-planetă cu aureolă și antene.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g26-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F04",
+  "name": "Luna e a mea",
+  "gender": "fete",
+  "garment": "tee_baby_crop",
+  "garment_label": "Baby tee",
+  "category": "tricouri",
+  "price": 149,
+  "description": "Semilună, stele și scris elegant.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g27-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Lavandă",
+    "hex": "#C9C3E6"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F05",
+  "name": "Întoarcerea lui Saturn",
+  "gender": "fete",
+  "garment": "tee_baby_crop",
+  "garment_label": "Baby tee",
+  "category": "tricouri",
+  "price": 149,
+  "description": "Saturn cromat cu inele lucioase.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g13-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Bleu",
+    "hex": "#B9D3EF"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F06",
+  "name": "Sclipire",
+  "gender": "fete",
+  "garment": "tee_baby_crop",
+  "garment_label": "Baby tee",
+  "category": "tricouri",
+  "price": 139,
+  "description": "O singură stea cromată, pe mijloc.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m02-dark",
+     "zone": "front_chest_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F07",
+  "name": "404",
+  "gender": "fete",
+  "garment": "tee_baby_crop",
+  "garment_label": "Baby tee",
+  "category": "tricouri",
+  "price": 149,
+  "description": "Realitatea nu a fost găsită, în varianta crop.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g19-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F08",
+  "name": "Nu suntem singuri",
+  "gender": "fete",
+  "garment": "tee_baby_crop",
+  "garment_label": "Baby tee",
+  "category": "tricouri",
+  "price": 149,
+  "description": "OZN mic, mesaj scurt.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g29-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F09",
+  "name": "Ochiul",
+  "gender": "fete",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Irisul mare, pe tricou lălâu.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g04-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F10",
+  "name": "Harta cerului",
+  "gender": "fete",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Harta cerului în bleumarin pe crem.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g14-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Crem",
+    "hex": "#ECE5D6"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F11",
+  "name": "Geometrie sacră",
+  "gender": "fete",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Cubul lui Metatron pe spate.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g06-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F12",
+  "name": "Nepământean",
+  "gender": "fete",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Piesa-manifest pe mov închis.",
+  "prints": {
+   "front": [],
+   "back": [
+    {
+     "graphic": "g01-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Mov închis",
+    "hex": "#3B2558"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F13",
+  "name": "Fazele lunii",
+  "gender": "fete",
+  "garment": "tee_oversized",
+  "garment_label": "Tricou oversized",
+  "category": "tricouri",
+  "price": 179,
+  "description": "Fazele lunii în negru pe alb.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g15-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F14",
+  "name": "Nepământean",
+  "gender": "fete",
+  "garment": "crop_hoodie",
+  "garment_label": "Hanorac crop",
+  "category": "hanorace",
+  "price": 299,
+  "description": "Hanorac crop cu piesa-manifest pe spate.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m06-dark",
+     "zone": "front_chest_center"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g01-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F15",
+  "name": "Cosmic baby",
+  "gender": "fete",
+  "garment": "crop_hoodie",
+  "garment_label": "Hanorac crop",
+  "category": "hanorace",
+  "price": 299,
+  "description": "Text cromat pe roz prăfuit.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g28-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Roz prăfuit",
+    "hex": "#E6C4CF"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F16",
+  "name": "Galaxie",
+  "gender": "fete",
+  "garment": "crop_hoodie",
+  "garment_label": "Hanorac crop",
+  "category": "hanorace",
+  "price": 299,
+  "description": "Galaxia spirală pe piept.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g07-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F17",
+  "name": "Luna e a mea",
+  "gender": "fete",
+  "garment": "crop_hoodie",
+  "garment_label": "Hanorac crop",
+  "category": "hanorace",
+  "price": 299,
+  "description": "Semilună și scris elegant pe crem.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g27-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Crem",
+    "hex": "#ECE5D6"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F18",
+  "name": "Saturn",
+  "gender": "fete",
+  "garment": "crop_hoodie",
+  "garment_label": "Hanorac crop",
+  "category": "hanorace",
+  "price": 299,
+  "description": "Saturn cromat pe negru.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g13-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F19",
+  "name": "Orizontul evenimentelor",
+  "gender": "fete",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Gaura neagră pe spate, sclipire pe piept.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m02-dark",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g08-dark",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F20",
+  "name": "Doar cerul e real",
+  "gender": "fete",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Nori și raze pe hanorac alb.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-light",
+     "zone": "front_chest_left"
+    }
+   ],
+   "back": [
+    {
+     "graphic": "g31-light",
+     "zone": "back_center"
+    }
+   ]
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F21",
+  "name": "Vizitator",
+  "gender": "fete",
+  "garment": "hoodie",
+  "garment_label": "Hanorac oversized",
+  "category": "hanorace",
+  "price": 349,
+  "description": "Extraterestrul cromat pe mov închis.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g22-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Mov închis",
+    "hex": "#3B2558"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F22",
+  "name": "Câmp de stele",
+  "gender": "fete",
+  "garment": "mini_skirt",
+  "garment_label": "Fustă mini",
+  "category": "rochii-fuste",
+  "price": 179,
+  "description": "Fustă mini cu stele sclipitoare.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p01",
+  "colors": [
+   {
+    "name": "Imprimeu Câmp de stele",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F23",
+  "name": "Geometrie sacră",
+  "gender": "fete",
+  "garment": "mini_skirt",
+  "garment_label": "Fustă mini",
+  "category": "rochii-fuste",
+  "price": 179,
+  "description": "Floarea vieții în linii pe indigo.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p04",
+  "colors": [
+   {
+    "name": "Imprimeu Geometrie sacră",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F24",
+  "name": "Planete",
+  "gender": "fete",
+  "garment": "mini_skirt",
+  "garment_label": "Fustă mini",
+  "category": "rochii-fuste",
+  "price": 179,
+  "description": "Planete și luni presărate pe bleumarin.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p07",
+  "colors": [
+   {
+    "name": "Imprimeu Planete",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F25",
+  "name": "Glitch",
+  "gender": "fete",
+  "garment": "mini_skirt",
+  "garment_label": "Fustă mini",
+  "category": "rochii-fuste",
+  "price": 179,
+  "description": "Benzi RGB deplasate.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p06",
+  "colors": [
+   {
+    "name": "Imprimeu Glitch",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F26",
+  "name": "Nebuloasă",
+  "gender": "fete",
+  "garment": "biker_shorts",
+  "garment_label": "Pantaloni biker",
+  "category": "sport",
+  "price": 169,
+  "description": "Pantaloni biker cu nebuloasă.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p08",
+  "colors": [
+   {
+    "name": "Imprimeu Nebuloasă",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F27",
+  "name": "Grilă",
+  "gender": "fete",
+  "garment": "biker_shorts",
+  "garment_label": "Pantaloni biker",
+  "category": "sport",
+  "price": 169,
+  "description": "Grilă cyan pe negru.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p09",
+  "colors": [
+   {
+    "name": "Imprimeu Grilă",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F28",
+  "name": "Ochi",
+  "gender": "fete",
+  "garment": "biker_shorts",
+  "garment_label": "Pantaloni biker",
+  "category": "sport",
+  "price": 169,
+  "description": "Ochi repetați, posterizați.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p05",
+  "colors": [
+   {
+    "name": "Imprimeu Ochi",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F29",
+  "name": "Galaxie",
+  "gender": "fete",
+  "garment": "leggings",
+  "garment_label": "Colanți",
+  "category": "sport",
+  "price": 189,
+  "description": "Colanți cu galaxie pe toată lungimea.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p02",
+  "colors": [
+   {
+    "name": "Imprimeu Galaxie",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F30",
+  "name": "Scanline",
+  "gender": "fete",
+  "garment": "leggings",
+  "garment_label": "Colanți",
+  "category": "sport",
+  "price": 189,
+  "description": "Benzi cyan-indigo cu linii de scanare.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p03",
+  "colors": [
+   {
+    "name": "Imprimeu Scanline",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F31",
+  "name": "Static",
+  "gender": "fete",
+  "garment": "leggings",
+  "garment_label": "Colanți",
+  "category": "sport",
+  "price": 189,
+  "description": "Zgomot TV cu nuanță albastră.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p10",
+  "colors": [
+   {
+    "name": "Imprimeu Static",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F32",
+  "name": "Câmp de stele",
+  "gender": "fete",
+  "garment": "crop_tank",
+  "garment_label": "Crop top",
+  "category": "tricouri",
+  "price": 129,
+  "description": "Crop top cu stele sclipitoare.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p01",
+  "colors": [
+   {
+    "name": "Imprimeu Câmp de stele",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F33",
+  "name": "Ochi",
+  "gender": "fete",
+  "garment": "crop_tank",
+  "garment_label": "Crop top",
+  "category": "tricouri",
+  "price": 129,
+  "description": "Ochiul pixelat, mic, pe alb.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m04-light",
+     "zone": "front_chest_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F34",
+  "name": "Nebuloasă",
+  "gender": "fete",
+  "garment": "crop_tank",
+  "garment_label": "Crop top",
+  "category": "tricouri",
+  "price": 129,
+  "description": "Crop top cu nebuloasă.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p08",
+  "colors": [
+   {
+    "name": "Imprimeu Nebuloasă",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F35",
+  "name": "Nepământean",
+  "gender": "fete",
+  "garment": "tshirt_dress",
+  "garment_label": "Rochie-tricou",
+  "category": "rochii-fuste",
+  "price": 229,
+  "description": "Rochie-tricou largă cu piesa-manifest în față.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g01-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F36",
+  "name": "Semnal pierdut",
+  "gender": "fete",
+  "garment": "tshirt_dress",
+  "garment_label": "Rochie-tricou",
+  "category": "rochii-fuste",
+  "price": 229,
+  "description": "Mira TV spartă pe rochie-tricou albă.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g05-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "F37",
+  "name": "Galaxie",
+  "gender": "fete",
+  "garment": "tshirt_dress",
+  "garment_label": "Rochie-tricou",
+  "category": "rochii-fuste",
+  "price": 249,
+  "description": "Rochie-tricou cu imprimeu complet de galaxie.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p02",
+  "colors": [
+   {
+    "name": "Imprimeu Galaxie",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F38",
+  "name": "Planete",
+  "gender": "fete",
+  "garment": "sports_bra",
+  "garment_label": "Bustieră sport",
+  "category": "sport",
+  "price": 149,
+  "description": "Bustieră sport cu planete.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p07",
+  "colors": [
+   {
+    "name": "Imprimeu Planete",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F39",
+  "name": "Geometrie sacră",
+  "gender": "fete",
+  "garment": "sports_bra",
+  "garment_label": "Bustieră sport",
+  "category": "sport",
+  "price": 149,
+  "description": "Bustieră sport cu floarea vieții.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p04",
+  "colors": [
+   {
+    "name": "Imprimeu Geometrie sacră",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "F40",
+  "name": "Harta cerului",
+  "gender": "fete",
+  "garment": "longsleeve_crop",
+  "garment_label": "Bluză crop cu mânecă lungă",
+  "category": "bluze",
+  "price": 179,
+  "description": "Harta cerului în alb pe negru, croială crop.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g14-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "U01",
+  "name": "Câmp de stele",
+  "gender": "unisex",
+  "garment": "bucket_hat",
+  "garment_label": "Pălărie bucket",
+  "category": "accesorii",
+  "price": 149,
+  "description": "Pălărie bucket cu stele.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p01",
+  "colors": [
+   {
+    "name": "Imprimeu Câmp de stele",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U02",
+  "name": "Galaxie",
+  "gender": "unisex",
+  "garment": "bucket_hat",
+  "garment_label": "Pălărie bucket",
+  "category": "accesorii",
+  "price": 149,
+  "description": "Pălărie bucket cu galaxie.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p02",
+  "colors": [
+   {
+    "name": "Imprimeu Galaxie",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U03",
+  "name": "Glitch",
+  "gender": "unisex",
+  "garment": "bucket_hat",
+  "garment_label": "Pălărie bucket",
+  "category": "accesorii",
+  "price": 149,
+  "description": "Pălărie bucket cu benzi RGB.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p06",
+  "colors": [
+   {
+    "name": "Imprimeu Glitch",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U04",
+  "name": "Ochi",
+  "gender": "unisex",
+  "garment": "bucket_hat",
+  "garment_label": "Pălărie bucket",
+  "category": "accesorii",
+  "price": 149,
+  "description": "Pălărie bucket cu ochi repetați.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p05",
+  "colors": [
+   {
+    "name": "Imprimeu Ochi",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U05",
+  "name": "Globul",
+  "gender": "unisex",
+  "garment": "cap",
+  "garment_label": "Șapcă",
+  "category": "accesorii",
+  "price": 139,
+  "description": "Șapcă cu emblema glob, brodată.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-dark",
+     "zone": "front_panel"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "broderie"
+ },
+ {
+  "id": "U06",
+  "name": "OZN",
+  "gender": "unisex",
+  "garment": "cap",
+  "garment_label": "Șapcă",
+  "category": "accesorii",
+  "price": 139,
+  "description": "Șapcă cu OZN mic, brodat.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m05-dark",
+     "zone": "front_panel"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Bleumarin",
+    "hex": "#1B2140"
+   }
+  ],
+  "technique": "broderie"
+ },
+ {
+  "id": "U07",
+  "name": "Nepământean",
+  "gender": "unisex",
+  "garment": "cap",
+  "garment_label": "Șapcă",
+  "category": "accesorii",
+  "price": 139,
+  "description": "Șapcă albă cu textul colecției.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m06-light",
+     "zone": "front_panel"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F5F5F2"
+   }
+  ],
+  "technique": "broderie"
+ },
+ {
+  "id": "U08",
+  "name": "Sclipire",
+  "gender": "unisex",
+  "garment": "beanie",
+  "garment_label": "Fes",
+  "category": "accesorii",
+  "price": 119,
+  "description": "Fes cu stea brodată.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m02-dark",
+     "zone": "front_cuff"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "broderie"
+ },
+ {
+  "id": "U09",
+  "name": "Globul",
+  "gender": "unisex",
+  "garment": "beanie",
+  "garment_label": "Fes",
+  "category": "accesorii",
+  "price": 119,
+  "description": "Fes mov cu emblema glob.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "m01-dark",
+     "zone": "front_cuff"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Mov închis",
+    "hex": "#3B2558"
+   }
+  ],
+  "technique": "broderie"
+ },
+ {
+  "id": "U10",
+  "name": "Câmp de stele",
+  "gender": "unisex",
+  "garment": "socks",
+  "garment_label": "Șosete",
+  "category": "accesorii",
+  "price": 79,
+  "description": "Șosete cu stele.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p01",
+  "colors": [
+   {
+    "name": "Imprimeu Câmp de stele",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U11",
+  "name": "Ochi",
+  "gender": "unisex",
+  "garment": "socks",
+  "garment_label": "Șosete",
+  "category": "accesorii",
+  "price": 79,
+  "description": "Șosete cu ochi.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p05",
+  "colors": [
+   {
+    "name": "Imprimeu Ochi",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U12",
+  "name": "Planete",
+  "gender": "unisex",
+  "garment": "socks",
+  "garment_label": "Șosete",
+  "category": "accesorii",
+  "price": 79,
+  "description": "Șosete cu planete.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p07",
+  "colors": [
+   {
+    "name": "Imprimeu Planete",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U13",
+  "name": "Grilă",
+  "gender": "unisex",
+  "garment": "socks",
+  "garment_label": "Șosete",
+  "category": "accesorii",
+  "price": 79,
+  "description": "Șosete cu grilă cyan.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p09",
+  "colors": [
+   {
+    "name": "Imprimeu Grilă",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U14",
+  "name": "Realitatea e o simulare",
+  "gender": "unisex",
+  "garment": "tote",
+  "garment_label": "Geantă tote",
+  "category": "accesorii",
+  "price": 99,
+  "description": "Geantă tote cu afișul CRT.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g03-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "U15",
+  "name": "Harta cerului",
+  "gender": "unisex",
+  "garment": "tote",
+  "garment_label": "Geantă tote",
+  "category": "accesorii",
+  "price": 99,
+  "description": "Geantă tote naturală cu harta cerului.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g14-light",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Crem",
+    "hex": "#ECE5D6"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "U16",
+  "name": "Pământul e doar o escală",
+  "gender": "unisex",
+  "garment": "tote",
+  "garment_label": "Geantă tote",
+  "category": "accesorii",
+  "price": 99,
+  "description": "Geantă tote cu panoul de plecări.",
+  "prints": {
+   "front": [
+    {
+     "graphic": "g34-dark",
+     "zone": "front_center"
+    }
+   ],
+   "back": []
+  },
+  "colors": [
+   {
+    "name": "Negru",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "DTG"
+ },
+ {
+  "id": "U17",
+  "name": "Geometrie sacră",
+  "gender": "unisex",
+  "garment": "bandana",
+  "garment_label": "Bandană",
+  "category": "accesorii",
+  "price": 79,
+  "description": "Bandană cu floarea vieții.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p04",
+  "colors": [
+   {
+    "name": "Imprimeu Geometrie sacră",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U18",
+  "name": "Nebuloasă",
+  "gender": "unisex",
+  "garment": "bandana",
+  "garment_label": "Bandană",
+  "category": "accesorii",
+  "price": 79,
+  "description": "Bandană cu nebuloasă.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p08",
+  "colors": [
+   {
+    "name": "Imprimeu Nebuloasă",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U19",
+  "name": "Galaxie",
+  "gender": "unisex",
+  "garment": "drawstring_bag",
+  "garment_label": "Sac sport",
+  "category": "accesorii",
+  "price": 119,
+  "description": "Sac sport cu galaxie.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p02",
+  "colors": [
+   {
+    "name": "Imprimeu Galaxie",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ },
+ {
+  "id": "U20",
+  "name": "Static",
+  "gender": "unisex",
+  "garment": "drawstring_bag",
+  "garment_label": "Sac sport",
+  "category": "accesorii",
+  "price": 119,
+  "description": "Sac sport cu zgomot TV.",
+  "prints": {
+   "front": [],
+   "back": []
+  },
+  "aop": "p10",
+  "colors": [
+   {
+    "name": "Imprimeu Static",
+    "hex": "#111114"
+   }
+  ],
+  "technique": "Imprimeu complet (all-over, sublimare)"
+ }
+]
