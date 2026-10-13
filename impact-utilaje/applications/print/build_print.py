@@ -357,7 +357,6 @@ def van_decal():
 
 def van_mockup(decal):
     d = Doc(2400, 1200, "Impact Utilaje — autoutilitară, mockup lateral")
-    bg = lin_grad(d, [(0, B, 1), (1, B, 1)])
     d.add('<rect width="2400" height="1200" fill="%s"/>' % B)
     d.add('<rect y="1010" width="2400" height="190" fill="%s" opacity=".35"/>' % G)
     sh = rad_grad(d, [(0, K, 0.5), (1, K, 0)])
@@ -373,9 +372,8 @@ def van_mockup(decal):
     d.add(d.hazard(240, 770, 1990, 54, s=40))
     d.add('<rect x="240" y="824" width="1990" height="60" fill="%s"/>' % G)
     # cusături uși
-    for x in (1040, 1600):
+    for x in (880, 1600):
         d.add('<rect x="%d" y="262" width="4" height="508" fill="%s" opacity=".45"/>' % (x, G))
-    d.add('<path d="M1600 262 L1700 290 L1905 530 L1905 770" fill="none" stroke="%s" stroke-opacity=".0"/>' % G)
     d.add('<rect x="1880" y="525" width="4" height="245" fill="%s" opacity=".45"/>' % G)
     d.add("</g>")
     # geamuri
@@ -398,9 +396,9 @@ def van_mockup(decal):
               '<circle cx="%d" cy="890" r="46" fill="%s"/><circle cx="%d" cy="890" r="14" fill="%s"/>'
               % (cx, K, cx, G, cx, B, cx, G))
     # autocolant ușă (pe zona de marfă)
-    dw = 940
+    dw = 660
     dh = dw * 700 / 1200
-    d.add(decal.nest(1600 - 10 - dw - 520 + 260 + 30, 330, dw, dh, "vd"))
+    d.add(decal.nest(1240 - dw / 2, 330, dw, dh, "vd"))
     return d
 
 

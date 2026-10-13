@@ -19,7 +19,7 @@ svg.add(f'<circle cx="{C}" cy="{C}" r="276" fill="none" stroke="{WH}" stroke-wid
 svg.add(f'<circle cx="{C}" cy="{C}" r="262" fill="none" stroke="{LAV}" stroke-width="2.6"/>')
 svg.add(f'<circle cx="{C}" cy="{C}" r="205" fill="none" stroke="{LAV}" stroke-width="2.6"/>')
 svg.add(f'<path d="{arc_text(MICHROMA, "CLASIFICAT · NEPĂMÂNTEAN", 25, C, C, 224, -90, tracking=180, outward=True)}" fill="{WH}"/>')
-svg.add(f'<path d="{arc_text(MICHROMA, "LĂLÂU · 2026", 22, C, C, 242, 90, tracking=300, outward=False)}" fill="{LAV}"/>')
+svg.add(f'<path d="{arc_text(MICHROMA, "ONYXLAB · 2026", 22, C, C, 242, 90, tracking=300, outward=False)}" fill="{LAV}"/>')
 for a in (180, 0):
     import math
     x = C + 233 * math.cos(math.radians(a))
