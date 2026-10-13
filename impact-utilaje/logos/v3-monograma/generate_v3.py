@@ -14,7 +14,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from v3_geom import (PALETTE, circle, path_el, rect, rrect, soften_inner, svg_doc,  # noqa: E402
-                     text_geom, text_glyphs, tooth, transform, union)
+                     text_geom, text_glyphs, tooth, transform, type_path, union)
 
 Y, K, WH = PALETTE['yellow'], PALETTE['black'], PALETTE['white']
 FONT = 'ArchivoBlack-Regular.ttf'
@@ -22,13 +22,13 @@ FONT = 'ArchivoBlack-Regular.ttf'
 # ------------------------------------------------------------------ symbol
 P = dict(
     H=720,          # cap height of the I and the U (top of stems to baseline)
-    s=190,          # stem weight, same for the I and both arms of the U
-    gap=100,        # space between I and U
-    W=620,          # outer width of the U
-    teeth=(34, 62, 90, 118, 146),  # tooth angles, degrees, y-down (90 = straight down)
-    t_len=80,       # tooth length beyond the root circle
-    t_base=100,     # tooth width at the root
-    t_tip=70,       # tooth width at the tip
+    s=200,          # stem weight, same for the I and both arms of the U
+    gap=105,        # space between I and U
+    W=640,          # outer width of the U
+    teeth=(32, 61, 90, 119, 148),  # tooth angles, degrees, y-down (90 = straight down)
+    t_len=76,       # tooth length beyond the root circle
+    t_base=118,     # tooth width at the root
+    t_tip=88,       # tooth width at the tip
     fillet=12,      # radius of the fillets between teeth
 )
 
@@ -60,32 +60,37 @@ def bounds(*gs):
 UTILAJE_OPTICAL = (-0.10, -0.12, 0.0, -0.22, -0.17, 0.0)
 
 def wordmark(cap1, line_gap, cap2):
-    """IMPACT over UTILAJE, both lines the same ink width. Origin: IMPACT cap top-left ink = (0, 0)."""
+    """IMPACT over UTILAJE, both lines the same ink width; ink starts at x = 0, IMPACT cap top at y = 0.
+    Returns measuring geometry (shapely) and draw ops for tools/text2path.outline()."""
     size1 = cap1 / 0.688
     size2 = cap2 / 0.688
+    base2 = cap1 + line_gap + cap2
     imp, _ = text_geom(FONT, 'IMPACT', size1, 0, cap1)
     b1 = imp.bounds
     imp = transform(imp, 1, -b1[0], 0)
     w1 = b1[2] - b1[0]
+    imp_ops = [(FONT, 'IMPACT', size1, -b1[0], cap1)]
 
     def ut(tr):
         # wide tracking exaggerates open/diagonal shapes (T, L, A, J): pull those pairs in
-        gl, _ = text_glyphs(FONT, 'UTILAJE', size2, 0, cap1 + line_gap + cap2, tr)
-        shift, out = 0.0, []
-        for g, adj in zip(gl, [0] + list(UTILAJE_OPTICAL)):
+        gl, _, xs = text_glyphs(FONT, 'UTILAJE', size2, 0, base2, tr)
+        shift, out, xs2 = 0.0, [], []
+        for g, x, adj in zip(gl, xs, [0] + list(UTILAJE_OPTICAL)):
             shift += adj * cap2
             out.append(transform(g, 1, shift, 0))
-        return union(*out)
+            xs2.append(x + shift)
+        return union(*out), xs2
 
     # ink width is linear in tracking: solve exactly
-    g0, g1 = ut(0), ut(100)
+    (g0, _), (g1, _) = ut(0), ut(100)
     w0 = g0.bounds[2] - g0.bounds[0]
     wa = g1.bounds[2] - g1.bounds[0]
     tr = 100 * (w1 - w0) / (wa - w0)
-    uti = ut(tr)
+    uti, xs = ut(tr)
     b2 = uti.bounds
     uti = transform(uti, 1, -b2[0], 0)
-    return imp, uti, w1, tr
+    uti_ops = [(FONT, ch, size2, x - b2[0], base2) for ch, x in zip('UTILAJE', xs)]
+    return imp, uti, imp_ops, uti_ops, w1, tr
 
 
 # ------------------------------------------------------------------ layouts
@@ -104,7 +109,7 @@ def lockup(colors, l=L, p=P):
     sb = bounds(I, U)
     cap1, cap2 = l['cap1'] * H, l['cap2'] * H
     line_gap = H - cap1 - cap2
-    imp, uti, w, tr = wordmark(cap1, line_gap, cap2)
+    imp, uti, imp_ops, uti_ops, w, tr = wordmark(cap1, line_gap, cap2)
     tx = sb[2] + l['sym_gap'] * H
     imp = transform(imp, 1, tx, 0)
     uti = transform(uti, 1, tx, 0)
@@ -114,8 +119,12 @@ def lockup(colors, l=L, p=P):
     m = l['margin'] * art_w / (1 - 2 * l['margin'])
     dx, dy = m - allb[0], m - allb[1]
     vb_w, vb_h = art_w + 2 * m, art_h + 2 * m
-    parts = [(I, colors['I']), (U, colors['U']), (imp, colors['t1']), (uti, colors['t2'])]
-    body = merge_by_color(parts, dx, dy)
+    body = merge_by_color([(I, colors['I']), (U, colors['U'])], dx, dy)
+    # type: true curves straight from tools/text2path.py (geometry above was only for measuring)
+    if colors['t1'] == colors['t2']:
+        body += type_path(imp_ops + uti_ops, colors['t1'], tx + dx, dy)
+    else:
+        body += type_path(imp_ops, colors['t1'], tx + dx, dy) + type_path(uti_ops, colors['t2'], tx + dx, dy)
     return svg_doc(vb_w, vb_h, body, 'Impact Utilaje'), tr
 
 
@@ -129,7 +138,7 @@ def merge_by_color(parts, dx=0, dy=0):
     return ''.join(path_el(union(*groups[c]), c) for c in order)
 
 
-def icon(colors, p=P, margin=0.04, tile=None, tile_scale=0.60):
+def icon(colors, p=P, margin=0.04, tile=None, tile_scale=0.64):
     """Square icon. tile=None -> transparent; tile=colour -> rounded-square tile behind."""
     I, U = symbol(p)
     b = bounds(I, U)
@@ -160,6 +169,9 @@ def main():
         'v3-reverse.svg': lockup(dict(I=WH, U=Y, t1=WH, t2=WH))[0],
         'v3-icon.svg': icon(dict(I=K, U=Y)),
         'v3-icon-tile.svg': icon(dict(I=K, U=K), tile=Y),
+        # extras: the symbol alone for dark backgrounds and for one-colour use (embroidery, stamps)
+        'v3-icon-reverse.svg': icon(dict(I=WH, U=Y)),
+        'v3-icon-mono-black.svg': icon(dict(I=K, U=K)),
     }
     for name, svg in files.items():
         with open(os.path.join(HERE, name), 'w') as f:

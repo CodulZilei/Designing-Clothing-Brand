@@ -32,7 +32,7 @@ QS = 32  # segmente pe sfert de cerc
 R = 52                        # raza roții (ambele roți egale)
 RW = (136.0, GROUND - R)      # centrul roții spate
 FW = (330.0, GROUND - R)      # centrul roții față
-GAP = {'detaliat': 11.0, 'simplu': 14.5, 'micro': 18.0}   # inel liber în jurul anvelopei
+GAP = {'detaliat': 11.0, 'simplu': 14.5, 'micro': 20.0}   # inel liber în jurul anvelopei
 
 
 def circle(c, r):
@@ -65,124 +65,160 @@ def bezier(p0, p1, p2, p3, n=24):
 
 
 def wheel(c, level):
-    """Roata: anvelopă + jantă + butuc, cu găuri reale."""
+    """Roata: anvelopă groasă + jantă + butuc, cu găuri reale.
+    Anvelopa e masivă (jantă mică), ca la un încărcător real de ~20 t."""
     tire = circle(c, R)
     if level == 'detaliat':
-        # câteva crestături de profil, radiale și late (stolli de anvelopă)
-        cuts = []
-        n = 10
+        # câteva crestături de profil rotunjite (stolli de cauciuc, nu dinți de roată dințată)
+        bites = []
+        n, w, dpt = 10, 11.0, 7.0
         for i in range(n):
             a = 2 * math.pi * i / n + math.pi / n
             ca, sa = math.cos(a), math.sin(a)
             tx, ty = -sa, ca
-            w, dpt = 11.0, 7.0
-            r0, r1 = R - dpt, R + 6
             p = lambda r, off: (c[0] + ca * r + tx * off, c[1] + sa * r + ty * off)
-            cuts.append(Polygon([p(r0, -w / 2), p(r0, w / 2), p(r1, w / 2), p(r1, -w / 2)]))
-        tire = tire.difference(unary_union(cuts))
-        tire = tire.difference(circle(c, 33))          # interiorul anvelopei = janta (gol)
-        hub = circle(c, 22).difference(circle(c, 7))   # butuc cu gaura axului
+            rc = R + w / 2 - dpt
+            bites.append(circle(p(rc, 0), w / 2).union(
+                Polygon([p(rc, -w / 2), p(rc, w / 2), p(R + 8, w / 2), p(R + 8, -w / 2)])))
+        tire = tire.difference(unary_union(bites))
+        tire = tire.difference(circle(c, 29))          # janta (gol)
+        hub = circle(c, 19).difference(circle(c, 6))   # butuc cu gaura axului
         return unary_union([tire, hub])
     if level == 'simplu':
-        tire = tire.difference(circle(c, 31))
-        hub = circle(c, 16)
-        return unary_union([tire, hub])
+        tire = tire.difference(circle(c, 30))
+        return unary_union([tire, circle(c, 15)])
     # micro: roată plină cu un punct de butuc decupat
     return tire.difference(circle(c, 18))
 
 
 # puncte cheie comune (aceleași proporții la toate nivelurile)
-PIVOT = (264, 170)      # pivotul brațului pe turnul șasiului față
-BEND = (366, 176)       # cotul brațului (deasupra roții față)
-BPIN = (432, 258)       # bolțul cupei
-CYL0 = (252, 146)       # baza cilindrului de basculare
-CRANK_TOP = (348, 126)  # vârful pârghiei (bellcrank)
-CRANK_PIV = (364, 168)  # pivotul pârghiei pe braț
-CRANK_BOT = (388, 188)  # capătul de jos al pârghiei
-BRACKET = (428, 204)    # urechea de sus a cupei
+PIVOT = (268, 176)      # pivotul brațului pe turnul șasiului față
+BPIN = (438, 258)       # bolțul cupei
+# axa brațului: urcă ușor peste roata față (formă de banană), apoi coboară la cupă
+BOOM_KEYS = [PIVOT, (300, 174), (336, 172), (372, 177), (404, 214), BPIN]
+# în micro brațul e mai gros, așa că axa lui stă cu câțiva pixeli mai sus peste anvelopă
+BOOM_KEYS_MICRO = [PIVOT, (300, 170), (336, 167), (370, 173), (404, 214), BPIN]
+CYL0 = (260, 140)       # baza cilindrului de basculare (pe turn)
+CRANK_TOP = (350, 126)  # vârful pârghiei (bellcrank)
+CRANK_PIV = (366, 174)  # pivotul pârghiei pe braț
+BRACKET = (432, 202)    # urechea de sus a cupei
 FLOOR_Y = 286           # fundul cupei (cupa ușor ridicată)
 
 
+def catmull(keys, n=12):
+    """Curbă Catmull-Rom netedă prin punctele cheie."""
+    pts = [keys[0]] + list(keys) + [keys[-1]]
+    out = []
+    for i in range(1, len(pts) - 2):
+        p0, p1, p2, p3 = pts[i - 1], pts[i], pts[i + 1], pts[i + 2]
+        for k in range(n):
+            t = k / n
+            t2, t3 = t * t, t * t * t
+            out.append(tuple(0.5 * ((2 * p1[j]) + (-p0[j] + p2[j]) * t +
+                                    (2 * p0[j] - 5 * p1[j] + 4 * p2[j] - p3[j]) * t2 +
+                                    (-p0[j] + 3 * p1[j] - 3 * p2[j] + p3[j]) * t3) for j in (0, 1)))
+    out.append(keys[-1])
+    return out
+
+
 def bucket_poly():
-    top_back = (420, 196)
+    top_back = (424, 196)
     heel = (440, FLOOR_Y)
-    back = bezier(top_back, (400, 220), (400, 280), heel, 24)
-    edge = (494, FLOOR_Y)      # muchia tăietoare
-    lip = (452, 192)           # buza de sus (spill guard)
-    return Polygon(back + [edge, (497, FLOOR_Y - 6), lip])
+    back = bezier(top_back, (403, 220), (400, 282), heel, 24)
+    lip = (456, 192)           # buza de sus (spill guard)
+    return Polygon(back + [(TEETH_X1, FLOOR_Y), lip])
 
 
-def teeth_poly(n, x0, x1, depth):
-    """Dinți în dinte de fierăstrău sub muchia tăietoare, cu vârful spre înainte."""
+TEETH_X0, TEETH_X1 = 440, 498
+
+
+def teeth_poly(n, depth):
+    """Dinți de fierăstrău sub muchia tăietoare, cu vârful spre înainte (ca în logo-ul original)."""
+    x0, x1 = TEETH_X0, TEETH_X1
     step = (x1 - x0) / n
-    pts = [(x0, FLOOR_Y - 2)]
+    pts = [(x0, FLOOR_Y - 3)]
     for i in range(n):
         xa = x0 + i * step
-        pts += [(xa, FLOOR_Y), (xa + step * 0.80, FLOOR_Y + depth), (xa + step, FLOOR_Y)]
-    pts += [(x1, FLOOR_Y - 2)]
+        pts += [(xa, FLOOR_Y), (xa + step, FLOOR_Y + depth)]
+    pts += [(x1, FLOOR_Y - 3)]
     return Polygon(pts)
 
 
-def build(level):
+BOOM_W = {'detaliat': 24, 'simplu': 26, 'micro': 32}
+
+
+def build(level, debug=None):
     gap = GAP[level]
     parts = []
 
     # ---- corp spate: contragreutate + capotă motor (coboară spre spate) + șasiu spate
     body = Polygon([(150, 152), (42, 166), (24, 186), (24, 246), (60, 256), (120, 262),
                     (240, 266), (240, 206), (150, 206)])
-    body = rounded(body, r_out=10)
-    parts.append(body)
+    parts.append(rounded(body, r_out=10))
 
-    # ---- cabina ROPS
-    cab = Polygon([(146, 208), (152, 114), (230, 114), (242, 208)])
-    roof = rounded(box(141, 100, 236, 116), r_out=5)
-    parts.append(unary_union([cab, roof]))
+    # ---- cabina ROPS (acoperiș cu streașină; în micro fără streașină)
+    if level == 'micro':
+        parts.append(rounded(Polygon([(146, 208), (150, 100), (234, 100), (242, 208)]), r_out=6))
+    else:
+        cab = Polygon([(146, 208), (152, 114), (230, 114), (242, 208)])
+        roof = rounded(box(141, 100, 236, 116), r_out=5)
+        parts.append(unary_union([cab, roof]))
 
-    # ---- șasiu față + turnul brațului
-    tower = Polygon([(234, 266), (234, 160), (244, 140), (262, 136), (280, 162),
-                     (292, 210), (292, 266)])
+    # ---- șasiu față + turnul brațului (în micro turnul se oprește la pivot)
+    if level == 'micro':
+        tower = Polygon([(232, 266), (232, 160), (262, 158), (292, 200), (292, 266)])
+    else:
+        tower = Polygon([(234, 266), (231, 132), (266, 130), (276, 142), (277, 168), (330, 178), (330, 266)])
     parts.append(rounded(tower, r_out=8))
 
-    # ---- brațul (boom): pivot pe turn, trece peste roata față, coboară la cupă
-    boom_w = {'detaliat': 24, 'simplu': 26, 'micro': 32}[level]
-    parts.append(bar([PIVOT, (320, 168), BEND, BPIN], boom_w))
+    # ---- brațul (boom)
+    boom = bar(catmull(BOOM_KEYS_MICRO if level == 'micro' else BOOM_KEYS), BOOM_W[level])
+    parts.append(boom)
 
     # ---- cupa
     parts.append(rounded(bucket_poly(), r_out=4))
 
-    # ---- legătura de basculare (Z-bar): cilindru + pârghie + tijă
+    # ---- legătura de basculare (Z-bar): cilindru + pârghie; tija de jos e lipită de braț
     if level in ('detaliat', 'simplu'):
-        if level == 'detaliat':
-            barrel, rod, crank_w, link_w = 20, 11, 16, 13
-        else:
-            barrel, rod, crank_w, link_w = 22, 15, 18, 15
+        barrel, rod, crank_w = (20, 12, 17) if level == 'detaliat' else (20, 15, 19)
         mid = (CYL0[0] + (CRANK_TOP[0] - CYL0[0]) * 0.55, CYL0[1] + (CRANK_TOP[1] - CYL0[1]) * 0.55)
-        parts.append(bar([CYL0, mid], barrel))
-        parts.append(bar([mid, CRANK_TOP], rod))
-        parts.append(bar([CRANK_TOP, CRANK_PIV, CRANK_BOT], crank_w))
-        parts.append(bar([CRANK_BOT, BRACKET], link_w))
+        cyl = unary_union([bar([CYL0, mid], barrel), bar([mid, CRANK_TOP], rod)])
+        crank = bar([CRANK_TOP, CRANK_PIV], crank_w)
+        link = rounded(Polygon([CRANK_PIV, (396, 186), BRACKET, (438, 232), (404, 214), (372, 180)]), r_out=3)
+        parts += [cyl, crank, link]
+        if debug is not None:
+            debug['cyl'], debug['boom'] = cyl, boom
 
     # ---- dinții cupei (pe muchia tăietoare)
     if level == 'detaliat':
-        parts.append(teeth_poly(4, 442, 500, 11))
+        parts.append(teeth_poly(4, 11))
     elif level == 'simplu':
-        parts.append(teeth_poly(4, 442, 500, 12))
+        parts.append(teeth_poly(4, 12))
 
     # ---- țeava de eșapament pe capotă (doar detaliat)
     if level == 'detaliat':
         parts.append(rounded(box(108, 142, 120, 162), r_out=3))
 
     shape = unary_union(parts)
+    # rotunjire fină a colțurilor concave (îmbinări curate între piese)
+    shape = rounded(shape, r_in=3.0)
 
     # ---- spațiu liber în jurul roților (inel negativ)
     for c in (RW, FW):
         shape = shape.difference(circle(c, R + gap))
 
-    # ---- articulația: crestătură în V între șasiul spate și cel față
+    # ---- fanta dintre cabină și turnul șasiului față (se vede cerul printre ele, ca la utilajul real)
+    if level != 'micro':
+        sw = 11.0 if level == 'detaliat' else 15.0
+        cab_front = lambda y: 230 + (y - 114) * 12 / 94      # muchia frontală a cabinei
+        slot = bar([(cab_front(126) + sw / 2, 126), (cab_front(194) + sw / 2, 194)], sw)
+        shape = shape.difference(slot)
+
+    # ---- articulația: crestătură în V (vârf rotunjit) între șasiul spate și cel față
     if level != 'micro':
         hw = 11 if level == 'detaliat' else 14
-        v = Polygon([(237 - hw, 272), (237, 238), (237 + hw, 272)])
-        shape = shape.difference(v)
+        v = Polygon([(237 - hw, 276), (237, 236), (237 + hw, 276)])
+        shape = shape.difference(v.buffer(1.5, quad_segs=QS, join_style='round'))
 
     # ---- ferestrele cabinei
     if level == 'detaliat':
@@ -194,13 +230,14 @@ def build(level):
         w2 = Polygon([(199, 131), (214, 131), (221, 190), (199, 190)])
         shape = shape.difference(rounded(unary_union([w1, w2]), r_out=3))
     else:
-        w = Polygon([(168, 132), (214, 132), (220, 182), (168, 182)])
+        w = Polygon([(172, 126), (212, 126), (215, 164), (172, 164)])
         shape = shape.difference(rounded(w, r_out=4))
 
-    # ---- grila motorului (fante)
+    # ---- detalii negative doar la nivelul detaliat: grila motorului + bolțuri
     if level == 'detaliat':
-        slots = [rounded(box(40, y, 72, y + 10), r_out=4.9) for y in (184, 202, 220)]
-        shape = shape.difference(unary_union(slots))
+        slots = [rounded(box(43, y, 66, y + 10), r_out=4.9) for y in (180, 200, 220)]
+        pins = [circle(PIVOT, 5), circle(CRANK_PIV, 5)]
+        shape = shape.difference(unary_union(slots + pins))
 
     # ---- roțile
     shape = unary_union([shape, wheel(RW, level), wheel(FW, level)])

@@ -10,7 +10,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from v3_geom import (PALETTE, circle, path_el, poly, rect, rrect, svg_doc, text_geom,  # noqa: E402
-                     tooth, transform, union)
+                     tooth, transform, type_path, union)
 
 Y, K = PALETTE['yellow'], PALETTE['black']
 
@@ -114,6 +114,44 @@ def sk_h():
     return [(I, K), (union(U, *teeth), Y)]
 
 
+# --- later rounds (refinements of A) ---------------------------------------
+def _gear_iu(s=180, gap=95, W=600, top=110, H=720, teeth=(30, 70, 110, 150), tl=75, tb=118, tt=80):
+    x0 = (1000 - (s + gap + W)) / 2
+    I = rect(x0, top, x0 + s, top + H)
+    ux0 = x0 + s + gap
+    U, (cx, cy, R) = u_round(ux0, ux0 + W, top, top + H, s)
+    T = union(*[tooth(cx, cy, a, R - 20, R + tl, tb, tt) for a in teeth])
+    return x0, I, union(U, T), (top, H, s)
+
+
+def sk_a1():
+    x0, I, U, _ = _gear_iu()
+    return [(I, K), (U, Y)]
+
+
+def sk_hazard():
+    x0, I, U, (top, H, s) = _gear_iu(gap=95, teeth=(38, 74.67, 105.33, 142), tb=108, tt=74)
+    bands = union(*[poly([(x0 - 10, yy + 45), (x0 + s + 10, yy - 45), (x0 + s + 10, yy + 35), (x0 - 10, yy + 125)])
+                    for yy in (top + 0.2 * H, top + 0.56 * H)])
+    return [(I.difference(bands), K), (I.intersection(bands), Y), (U, Y)]
+
+
+def sk_badge():
+    g = union(circle(500, 500, 395), *[tooth(500, 500, -90 + i * 36, 375, 470, 120, 80) for i in range(10)])
+    t, w = text_geom('ArchivoBlack-Regular.ttf', 'IU', 420, 500, 500 + 420 * 0.688 / 2, -20, 'middle')
+    return [(g.difference(t), Y)]
+
+
+def sk_final():
+    from generate_v3 import symbol
+    I, U = symbol()
+    b = union(I, U).bounds
+    sc = 840 / max(b[2] - b[0], b[3] - b[1])
+    dx = 500 - (b[0] + b[2]) / 2 * sc
+    dy = 500 - (b[1] + b[3]) / 2 * sc
+    return [(transform(I, sc, dx, dy), K), (transform(U, sc, dx, dy), Y)]
+
+
 SKETCHES = [
     ('A', 'ROATĂ-U', sk_a),
     ('B', 'FANTĂ ÎN ROATĂ', sk_b),
@@ -123,10 +161,14 @@ SKETCHES = [
     ('F', 'PIULIȚĂ', sk_f),
     ('G', 'LIGATURĂ BRAȚ', sk_g),
     ('H', 'U ANGRENAJ', sk_h),
+    ('A2', 'ROATĂ-U, 4 DINȚI', sk_a1),
+    ('A3', 'I CU DUNGI', sk_hazard),
+    ('F2', 'IU ÎN ROATĂ', sk_badge),
+    ('V3', 'ALES: ROATĂ-U, 5 DINȚI', sk_final),
 ]
 
 
-def sheet(sketches, cols=4, out='v3-sketches.svg', extra_rows=None):
+def sheet(sketches, cols=4, out='v3-sketches.svg'):
     cell, gap, label_h = 1000, 80, 260
     rows = (len(sketches) + cols - 1) // cols
     W = cols * cell + (cols + 1) * gap
@@ -137,12 +179,14 @@ def sheet(sketches, cols=4, out='v3-sketches.svg', extra_rows=None):
         ox = gap + c * (cell + gap)
         oy = gap + r * (cell + label_h + gap)
         body.append(f'<path fill="{PALETTE["white"]}" d="M{ox} {oy} h{cell} v{cell} h-{cell} Z"/>')
+        if code == 'V3':
+            ring = rect(ox - 24, oy - 24, ox + cell + 24, oy + cell + 24).difference(rect(ox, oy, ox + cell, oy + cell))
+            body.append(path_el(ring, Y))
         parts = fn()
         for g, col in parts:
             body.append(path_el(transform(g, 1, ox, oy), col))
         # label
-        lab, _ = text_geom('IBMPlexMono-SemiBold.ttf', f'{code}  {name}', 58, ox, oy + cell + 90)
-        body.append(path_el(lab, PALETTE['steel']))
+        body.append(type_path([('IBMPlexMono-SemiBold.ttf', f'{code}  {name}', 58, ox, oy + cell + 90)], PALETTE['steel']))
         # 32 px and 16 px stand-ins (sheet renders at 1200 px wide -> 1 px = W/1200 units)
         px = W / 1200.0
         allg = union(*[g for g, _ in parts])

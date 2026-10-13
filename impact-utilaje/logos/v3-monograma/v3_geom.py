@@ -152,7 +152,7 @@ class _FlattenPen(BasePen):
 
 def text_geom(font_file, text, size, x=0.0, y=0.0, tracking=0.0, anchor='start'):
     """Shaped (HarfBuzz, kerned) text as a shapely geometry; baseline at y."""
-    glyphs, width = text_glyphs(font_file, text, size, x, y, tracking, anchor)
+    glyphs, width, _ = text_glyphs(font_file, text, size, x, y, tracking, anchor)
     return unary_union(glyphs), width
 
 
@@ -177,9 +177,10 @@ def text_glyphs(font_file, text, size, x=0.0, y=0.0, tracking=0.0, anchor='start
         x -= width / 2
     elif anchor == 'end':
         x -= width
-    glyphs = []
+    glyphs, xs = [], []
     pen_x = 0.0
     for i, (info, p) in enumerate(zip(buf.glyph_infos, pos)):
+        xs.append(x + (pen_x + p.x_offset) * sc)
         pen = _FlattenPen(gs)
         t = (sc, 0, 0, -sc, x + (pen_x + p.x_offset) * sc, y - p.y_offset * sc)
         gs[order[info.codepoint]].draw(TransformPen(pen, t))
@@ -188,7 +189,7 @@ def text_glyphs(font_file, text, size, x=0.0, y=0.0, tracking=0.0, anchor='start
             g = g.symmetric_difference(Polygon(c).buffer(0))  # even-odd
         glyphs.append(g)
         pen_x += p.x_advance + (tr if i < len(pos) - 1 else 0)
-    return glyphs, width
+    return glyphs, width, xs
 
 
 # ---------------------------------------------------------------- export
@@ -197,7 +198,7 @@ def _fmt(v):
     return '0' if s == '-0' else s
 
 
-def to_d(g, tol=0.25):
+def to_d(g, tol=0.1):
     if g.is_empty:
         return ''
     g = g.simplify(tol, preserve_topology=True)
@@ -213,9 +214,17 @@ def to_d(g, tol=0.25):
     return ' '.join(out)
 
 
-def path_el(g, fill, tol=0.25):
+def path_el(g, fill, tol=0.1):
     d = to_d(g, tol)
     return f'<path fill="{fill}" fill-rule="evenodd" d="{d}"/>' if d else ''
+
+
+def type_path(ops, fill, dx=0.0, dy=0.0):
+    """Outlined type with true curves, via tools/text2path.outline().
+    ops: list of (font_file, text, size, x, y). Glyph counters are real holes
+    (TrueType winding), so the default nonzero fill rule is used."""
+    d = ' '.join(outline(f'{FONTS}/{ff}', t, size, x + dx, y + dy)['d'] for ff, t, size, x, y in ops)
+    return f'<path fill="{fill}" d="{d}"/>' if d else ''
 
 
 def transform(g, scale=1.0, dx=0.0, dy=0.0):
