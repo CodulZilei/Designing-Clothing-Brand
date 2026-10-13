@@ -101,7 +101,7 @@ ROWS = [
     ("F06", "Sclipire", "tee_baby_crop", "negru", "m02-dark@front_chest_center", "", 139, "O singură stea cromată, pe mijloc."),
     ("F07", "404", "tee_baby_crop", "alb", "g19-light@front_center", "", 149, "Realitatea nu a fost găsită, în varianta crop."),
     ("F08", "Nu suntem singuri", "tee_baby_crop", "negru", "g29-dark@front_center", "", 149, "OZN mic, mesaj scurt."),
-    ("F09", "Ochiul", "tee_oversized", "negru", "g04-dark@front_center", "", 179, "Irisul mare, pe tricou lălâu."),
+    ("F09", "Ochiul", "tee_oversized", "negru", "g04-dark@front_center", "", 179, "Irisul mare, pe tricou oversized."),
     ("F10", "Harta cerului", "tee_oversized", "crem", "g14-light@front_center", "", 179, "Harta cerului în bleumarin pe crem."),
     ("F11", "Geometrie sacră", "tee_oversized", "negru", "m01-dark@front_chest_left", "g06-dark@back_center", 179, "Cubul lui Metatron pe spate."),
     ("F12", "Nepământean", "tee_oversized", "mov", "", "g01-dark@back_center", 179, "Piesa-manifest pe mov închis."),

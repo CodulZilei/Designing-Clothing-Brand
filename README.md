@@ -1,10 +1,10 @@
-# LĂLÂU Skate Co.
+# OnyxLAB
 
-Brand de haine de skate, croială largă (baggy / oversized), vândut online și produs la comandă.
+Brand de streetwear cosmic și glitch, croieli largi, vândut online și produs la comandă.
 
-| Fișier | Ce conține |
+| Folder / fișier | Ce conține |
 |---|---|
 | `docs/PLAN.md` | Planul magazinului: research, brand, domeniu, furnizor, site, legal, promovare, buget, calendar |
-| `lookbook/drop-01.html` | Propunerile pentru Drop 01 (grafică originală, mockup-uri, vot pe fiecare produs) |
-
-Stare: Faza 0, alegem hainele pentru primul drop.
+| `collection/` | Colecția **Nepământean**: 100 de piese (băieți, fete, unisex), grafică originală, motorul de mockup-uri, catalogul cu vot |
+| `lookbook/drop-01.html` | Arhivă: primele propuneri de skate (sub numele provizoriu LĂLÂU) |
+| `impact-utilaje/` | Proiect separat: refacerea logo-ului Impact Utilaje și materialele de brand |

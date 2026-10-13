@@ -63,7 +63,7 @@ C = []  # content (bloomed)
 
 # ---------------------------------------------------------------- header
 TOP = 92
-C.append(mono.line("LĂLÂU · NEPĂMÂNTEAN · 2026", 20, 86, TOP, PAL["cyan"]))
+C.append(mono.line("ONYXLAB · NEPĂMÂNTEAN · 2026", 20, 86, TOP, PAL["cyan"]))
 C.append(f'<circle cx="548" cy="{TOP - 7}" r="7" fill="{PAL["orange"]}"/>')
 C.append(mono.line("REC 03:33:07", 20, 564, TOP, PAL["white"]))
 C.append(mono.line("CANAL 03 / ARHIVĂ", 20, 1114, TOP, PAL["cyan"], anchor="end"))

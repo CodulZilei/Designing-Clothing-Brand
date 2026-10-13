@@ -1,6 +1,8 @@
-# LĂLÂU Skate Co. — planul magazinului
+# OnyxLAB — planul magazinului
 
-> Haine lălâi pentru oameni liberi. Brand de skate din București: tricouri oversized grele, hanorace, crewneck-uri și fesuri, vândute online, produse la comandă.
+> Streetwear cosmic și glitch, croieli largi. Tricouri oversized grele, hanorace, piese crop pentru fete și accesorii, vândute online, produse la comandă.
+
+> **Actualizare:** brandul se numește acum **OnyxLAB**. LĂLÂU a fost un nume provizoriu. Direcția vizuală e colecția **Nepământean** (`collection/`), făcută pornind de la imaginile de inspirație trimise. Drop 01 de skate (`lookbook/drop-01.html`) rămâne ca arhivă.
 
 Stare: **Faza 0 — alegem hainele.** Propunerile pentru Drop 01 sunt în `lookbook/drop-01.html` (publicat și ca pagină cu vot).
 
@@ -21,19 +23,19 @@ Stare: **Faza 0 — alegem hainele.** Propunerile pentru Drop 01 sunt în `lookb
 
 ## 2. Brandul
 
-- **Nume:** LĂLÂU (în URL: `lalau`). „Haine lălâi” e expresia românească pentru haine largi. E scurt, se ține minte și are umor.
-- **Logo:** „lălâu” scris cu litere rotunde de anii 70, cu umbră galbenă. Variantă „puff” cu litere umflate.
+- **Nume:** **OnyxLAB** (în URL: `onyxlab`). Onix e o piatră neagră și lucioasă, ca spațiul. „LAB” sugerează experimente, glitch și semnale. E internațional și scurt.
+- **Logo:** de făcut. Direcția propusă: wordmark extins, cu emblema glob din sârmă și stea din colecție.
 - **Univers vizual:** blocul de cartier, bordura vopsită alb-negru, porumbeii, asfaltul cu gropi, semnele de interzis. Lucruri pe care le recunoaște oricine a dat cu placa prin România.
 - **Culori:** negru, ecru, gri melanj, maro, verde pădure; accent galben ca la stațiile de autobuz și roșu de semn de circulație.
 - **Ton:** autoironic, scurt, în română. Exemplu: „Merge și pe asfalt prost.”
 - **De verificat înainte de lansare:** că numele nu e deja marcă înregistrată (căutare pe TMview / OSIM). Opțional, înregistrarea mărcii la OSIM.
 
-**Nume de rezervă**, dacă lalau nu e liber: BORDURĂ Skate Co., ASFALT Club.
+**De verificat:** dacă numele OnyxLAB e liber ca marcă (TMview / OSIM) și ca domeniu.
 
 ## 3. Domeniul
 
-- **Principal:** `lalau.ro` (încredere mai mare la clienții din România).
-- **Rezerve:** `lalau.store`, `lalauskate.ro`.
+- **Principal:** `onyxlab.ro` (încredere mai mare la clienții din România).
+- **Rezerve:** `onyxlab.store`, `onyxlab.shop`, `onyx-lab.ro`.
 - Cost estimat: în jur de 50–70 lei pe an pentru `.ro`.
 - **Notă:** nu am putut verifica disponibilitatea, pentru că mediul meu nu are acces la registrele de domenii. Verificarea și cumpărarea le faci tu, pe numele tău sau al firmei.
 
@@ -115,7 +117,7 @@ Nu sunt avocat sau contabil. Lista de mai jos e un punct de plecare de verificat
 ## 8. Promovarea
 
 **Înainte de lansare (2–3 săptămâni)**
-- Conturi `@lalau.skate` pe TikTok și Instagram.
+- Conturi `@onyxlab` (sau `@onyxlab.ro`) pe TikTok și Instagram.
 - Clipuri cu procesul: schițe, voturi pe designuri, despachetarea mostrelor.
 - Filmări de skate în locurile cunoscute (Tineretului, Herăstrău, Eroilor) cu hainele din mostre.
 - Tricouri gratis la 10–15 skateri locali cu 2.000–20.000 de urmăritori, în schimbul unor clipuri.
@@ -154,13 +156,13 @@ Ce pregătesc eu: textele postărilor, hashtag-urile, calendarul pe 4 săptămâ
 | 1. Construcție | Fișiere de print, site complet cu plăți de test, pagini legale, kit de promovare | eu |
 | 2. Conturi | Firmă, Stripe, Printful, Oblio/SmartBill, domeniu; comanzi mostrele | tu |
 | 3. Conectare | Conectez cheile (le pui direct în Cloudflare, nu în chat), urc produsele în Printful, comandă de test reală | eu + tu |
-| 4. Lansare | Site live pe lalau.ro, postări de lansare, seeding | tu + eu |
+| 4. Lansare | Site live pe onyxlab.ro, postări de lansare, seeding | tu + eu |
 
 ## 11. Ce am nevoie de la tine acum
 
 1. Votul pe produsele din lookbook.
 2. Pinuri de pe Pinterest care îți plac (linkuri), ca direcție de stil pentru variantele noi.
-3. Confirmare pentru nume (LĂLÂU) și pentru tipul de site (magazin propriu sau Shopify).
+3. ~~Numele~~: confirmat OnyxLAB. Rămâne de ales tipul de site (magazin propriu sau Shopify).
 
 ---
 

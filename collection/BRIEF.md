@@ -1,6 +1,6 @@
 # NEPĂMÂNTEAN — brief de colecție (100 de piese, băieți și fete)
 
-Colecția: **NEPĂMÂNTEAN** („nu de pe Pământul ăsta”). Brand provizoriu: LĂLÂU. Croieli largi (oversized, baggy) pentru băieți, plus croieli crop și ajustate pentru fete, și accesorii unisex. Lista celor 100 de piese este în `products.py` / `products.json`.
+Colecția: **NEPĂMÂNTEAN** („nu de pe Pământul ăsta”). Brandul: **ONYXLAB** (scris OnyxLAB în text, ONYXLAB în grafică). **Important: oriunde un prompt sau un fișier mai vechi spune LĂLÂU, folosește ONYXLAB** — LĂLÂU a fost un nume provizoriu, abandonat. Croieli largi (oversized, baggy) pentru băieți, plus croieli crop și ajustate pentru fete, și accesorii unisex. Lista celor 100 de piese este în `products.py` / `products.json`.
 
 ## Inspirația (descrisă în cuvinte, pentru că imaginile nu sunt în repo)
 
@@ -57,7 +57,7 @@ Unbounded Black/SemiBold (titluri extinse, ondulate), Michroma (tehnic, lat), Sy
 - Variante de culoare: `-dark` e pentru țesături închise (negru, bleumarin, cărbune, mov închis): cerneluri luminoase, fără suprafețe mari negru-pur în afara panourilor. `-light` e pentru țesături deschise (alb, crem, lavandă, bleu, roz, gri melanj): cerneluri închise (vid, indigo) plus accente. Când se cer amândouă, cele două variante au aceeași compoziție.
 - **Originalitate.** Fără logo-uri sau mărci reale (NASA, posturi TV, studiouri de film), fără reproducerea fidelă a blocului oficial de clasificare MPA, fără designul real al buletinului românesc și fără copierea pinurilor. Simbolurile publice (ochiul providenței, floarea vieții, mira de bare de culoare, hărțile de constelații) sunt în regulă.
 - Textele sunt în română cu diacritice corecte (ș, ț cu virgulă dedesubt), cu excepția sloganurilor marcate în engleză.
-- Semnătura de brand, opțională, în textul mărunt: `LĂLÂU · NEPĂMÂNTEAN · 2026`.
+- Semnătura de brand, opțională, în textul mărunt: `ONYXLAB · NEPĂMÂNTEAN · 2026`.
 
 ## Verificare
 
